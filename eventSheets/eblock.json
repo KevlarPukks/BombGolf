@@ -1,0 +1,305 @@
+{
+	"name": "eBlock",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "glassBlock",
+					"sid": 753290369791233,
+					"parameters": {
+						"object": "Ball"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "glassBlock",
+					"sid": 196093226790565,
+					"parameters": {
+						"instance-variable": "health",
+						"value": "1"
+					}
+				},
+				{
+					"callFunction": "ChangeGlassBlockSprite",
+					"sid": 473916913768796,
+					"parameters": [
+						"glassBlock.UID"
+					]
+				}
+			],
+			"sid": 791863251991973
+		},
+		{
+			"functionName": "DestroyGlassBlock",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "id",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 188651512628661
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "glassBlock",
+					"sid": 240855549053224,
+					"parameters": {
+						"unique-id": "id"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "glassBlock",
+					"sid": 932935682395118
+				}
+			],
+			"sid": 289936441596410
+		},
+		{
+			"functionName": "ChangeGlassBlockSprite",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "id",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 462241580939824
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [
+				{
+					"id": "pick-by-unique-id",
+					"objectClass": "glassBlock",
+					"sid": 826374525656396,
+					"parameters": {
+						"unique-id": "id"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 319257654697653,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "glassBlock",
+							"sid": 215968923660401,
+							"parameters": {
+								"instance-variable": "health",
+								"comparison": 0,
+								"value": "03"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "glassBlock",
+							"sid": 441558481421842,
+							"parameters": {
+								"animation": "\"normal\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 722429642662740
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "glassBlock",
+							"sid": 963649208578376,
+							"parameters": {
+								"instance-variable": "health",
+								"comparison": 0,
+								"value": "02"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "glassBlock",
+							"sid": 814866460718364,
+							"parameters": {
+								"animation": "\"half broke\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 388439718775930
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "glassBlock",
+							"sid": 519984887923831,
+							"parameters": {
+								"instance-variable": "health",
+								"comparison": 0,
+								"value": "01"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "glassBlock",
+							"sid": 363406712279589,
+							"parameters": {
+								"animation": "\"broken\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 586196953164084
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "glassBlock",
+							"sid": 321415605194343,
+							"parameters": {
+								"instance-variable": "health",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "DestroyGlassBlock",
+							"sid": 728144716895167,
+							"parameters": [
+								"glassBlock.UID"
+							]
+						}
+					],
+					"sid": 686809405096789
+				}
+			]
+		},
+		{
+			"functionName": "GlassBlockExplode",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 878552904294079,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 205943637470907,
+							"parameters": {
+								"object": "glassBlock"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 257657352725321,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 727314005709154,
+									"parameters": {
+										"first-value": "distance(Ball.X,Ball.Y,glassBlock.X,glassBlock.Y)",
+										"comparison": 3,
+										"second-value": "Ball.explosionDistance"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-immovable",
+									"objectClass": "glassBlock",
+									"sid": 423654768462398,
+									"behaviorType": "Physics2",
+									"parameters": {
+										"setting": "movable"
+									}
+								},
+								{
+									"id": "apply-impulse-towards-position",
+									"objectClass": "glassBlock",
+									"sid": 881815998745849,
+									"behaviorType": "Physics2",
+									"parameters": {
+										"impulse": "-Ball.explosionPower",
+										"x": "Ball.Y",
+										"y": "Ball.Y",
+										"image-point": "0"
+									}
+								},
+								{
+									"id": "set-elasticity",
+									"objectClass": "glassBlock",
+									"sid": 467314673967791,
+									"behaviorType": "Physics2",
+									"parameters": {
+										"elasticity": "0.2"
+									}
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "glassBlock",
+									"sid": 453319973946397,
+									"parameters": {
+										"instance-variable": "health",
+										"value": "2"
+									}
+								},
+								{
+									"callFunction": "ChangeGlassBlockSprite",
+									"sid": 483974679904581,
+									"parameters": [
+										"glassBlock.UID"
+									]
+								}
+							],
+							"sid": 938304592107883
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 176128973377437
+}

@@ -1,0 +1,610 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 25102,
+	"name": "BombGolf",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Tilemap",
+			"name": "Tilemap",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Anchor",
+			"name": "Anchor",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Physics",
+			"name": "Physics",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "aaXe_FSM",
+			"name": "FSM",
+			"author": "Loïc Morvan, piranha305",
+			"version": "1.3.0.0",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "destroy",
+			"name": "Destroy outside layout",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "brightness",
+			"name": "Brightness",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		}
+	],
+	"uniqueId": "1g9dloqlx6i",
+	"objectTypes": {
+		"items": [
+			"Tutorial",
+			"Start",
+			"distA",
+			"distB",
+			"Array",
+			"variables",
+			"levelScore",
+			"floorcollisionParticle",
+			"Sprite",
+			"powergauge"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"forestBg",
+					"Background_",
+					"desert",
+					"Sky"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"forestBgL1",
+							"forestBgL2",
+							"forestBgL3",
+							"forestBgL4",
+							"forestBgL5",
+							"forestBgL6",
+							"forestBgL7"
+						],
+						"subfolders": [],
+						"name": "forest background layers"
+					}
+				],
+				"name": "bg"
+			},
+			{
+				"items": [
+					"groundlayer",
+					"Tilemap",
+					"Ground"
+				],
+				"subfolders": [],
+				"name": "tilemaps"
+			},
+			{
+				"items": [
+					"ceilingCollisions3",
+					"groundCollisions",
+					"wallCollisions2",
+					"hole",
+					"TriggerZone",
+					"waterCollisions4"
+				],
+				"subfolders": [],
+				"name": "collisions"
+			},
+			{
+				"items": [
+					"Mouse",
+					"Touch"
+				],
+				"subfolders": [],
+				"name": "system"
+			},
+			{
+				"items": [
+					"arrow",
+					"Ball",
+					"Flag",
+					"goal",
+					"water",
+					"glassBlock"
+				],
+				"subfolders": [],
+				"name": "game objects"
+			},
+			{
+				"items": [
+					"debug_distance",
+					"debugPower"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"Cursor",
+							"exploddeText",
+							"explodeButton",
+							"leftArrow",
+							"rightArrow",
+							"resetCam",
+							"LevelStrokes",
+							"LevelStrokesPanel",
+							"GameStrokes",
+							"CurrentLevel",
+							"pauseButton",
+							"pauseMenuPanel",
+							"pauseMenuButton"
+						],
+						"subfolders": [],
+						"name": "game"
+					},
+					{
+						"items": [
+							"Text",
+							"title",
+							"play"
+						],
+						"subfolders": [
+							{
+								"items": [
+									"blueGreenGradient"
+								],
+								"subfolders": [],
+								"name": "bg"
+							}
+						],
+						"name": "title"
+					}
+				],
+				"name": "HUD"
+			},
+			{
+				"items": [
+					"Confetti",
+					"DistanceRuler",
+					"Trail",
+					"explosion",
+					"wickLight",
+					"wicksmoke",
+					"strokeEffect"
+				],
+				"subfolders": [],
+				"name": "effects"
+			}
+		]
+	},
+	"autosaveData": null,
+	"containers": [
+		{
+			"members": [
+				"Cursor",
+				"powergauge"
+			],
+			"selectMode": "normal"
+		},
+		{
+			"members": [
+				"Ball",
+				"Trail"
+			],
+			"selectMode": "normal"
+		},
+		{
+			"members": [
+				"exploddeText",
+				"explodeButton"
+			],
+			"selectMode": "normal"
+		},
+		{
+			"members": [
+				"LevelStrokes",
+				"LevelStrokesPanel"
+			],
+			"selectMode": "normal"
+		}
+	],
+	"families": {
+		"items": [
+			"explodable",
+			"GameHUDObjects",
+			"gameStatTextObjects"
+		],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"level4",
+			"level3",
+			"level5",
+			"level6",
+			"level7",
+			"level",
+			"level2",
+			"MainLevel",
+			"MainLevel2",
+			"ObjectRepository",
+			"level8",
+			"level9",
+			"level10"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"splash",
+					"title",
+					"level14",
+					"level13_hill",
+					"level11",
+					"level12",
+					"level13",
+					"gameOver"
+				],
+				"subfolders": [],
+				"name": "game"
+			}
+		]
+	},
+	"eventSheets": {
+		"items": [
+			"todo",
+			"eSplash"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"eBall",
+					"eBlock",
+					"eExplosion",
+					"eFlag",
+					"eHole",
+					"MainCode"
+				],
+				"subfolders": [],
+				"name": "game"
+			},
+			{
+				"items": [
+					"eExplodeButton",
+					"eScrollButtons",
+					"eGameHUD"
+				],
+				"subfolders": [],
+				"name": "hud"
+			},
+			{
+				"items": [
+					"etitle",
+					"ePlayButton",
+					"eGameOver",
+					"eRestartButton",
+					"ePauseMenu"
+				],
+				"subfolders": [],
+				"name": "menu"
+			}
+		]
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [],
+			"subfolders": []
+		},
+		"music": {
+			"items": [],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [
+				{
+					"name": "LuckiestGuy-Regular.ttf",
+					"type": "application/font-sfnt",
+					"sid": 115361050791340
+				},
+				{
+					"name": "Dimbo Regular.ttf",
+					"type": "application/font-sfnt",
+					"sid": 865559641256242
+				},
+				{
+					"name": "Dimbo Italic.ttf",
+					"type": "application/font-sfnt",
+					"sid": 536708478311401
+				}
+			],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 920719716159656,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 125752055886917,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 437858970877788,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 810551275494270,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 981274532639534,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 790860382434766,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 585709232488189,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "default.png",
+					"type": "image/png",
+					"sid": 941498923395474,
+					"icon-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "logo.png",
+					"type": "image/png",
+					"sid": 133260327770633,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "ball-animation 1-000.png",
+					"type": "image/png",
+					"sid": 928342488492680,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [
+				{
+					"name": "scrollSpeed.json",
+					"type": "application/json",
+					"sid": 160723517645681
+				}
+			],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [
+					"Ease 1"
+				],
+				"subfolders": []
+			}
+		]
+	},
+	"properties": {
+		"description": "Golf with an exxplosive twist",
+		"version": "1.0.0.0",
+		"author": "",
+		"authorEmail": "",
+		"authorWebsite": "",
+		"appId": "",
+		"pixelRounding": true,
+		"useLoaderLayout": true,
+		"fullscreenMode": "letterbox-integer-scale",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useHighDpi": true,
+		"orientations": "any",
+		"enableWebGL": true,
+		"gpuPreference": "high-performance",
+		"scriptsType": "module",
+		"framerateMode": "vsync",
+		"compositingMode": "standard",
+		"sampling": "nearest",
+		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "progress-logo",
+		"preloadSounds": true,
+		"clearBackground": true,
+		"enhancedAccelerationPrecision": true,
+		"cordovaiOSScheme": "app"
+	},
+	"viewportWidth": 854,
+	"viewportHeight": 480,
+	"firstLayout": "splash"
+}

@@ -1,0 +1,13 @@
+{
+	"name": "gameStatTextObjects",
+	"plugin-id": "Text",
+	"sid": 397693612777658,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"LevelStrokes",
+		"GameStrokes",
+		"CurrentLevel"
+	]
+}

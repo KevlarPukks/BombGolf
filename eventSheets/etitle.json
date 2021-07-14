@@ -1,0 +1,57 @@
+{
+	"name": "etitle",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "ePlayButton"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 961026400616822
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "title",
+					"sid": 923583350879848,
+					"parameters": {
+						"x": "ViewportWidth(0)/2"
+					}
+				},
+				{
+					"id": "set-x",
+					"objectClass": "Text",
+					"sid": 312029670588334,
+					"parameters": {
+						"x": "ViewportWidth(0)/2"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "variables",
+					"sid": 215083961989631,
+					"parameters": {
+						"instance-variable": "gameStrokes",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "variables",
+					"sid": 759069815755860,
+					"parameters": {
+						"instance-variable": "level",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 318370752124354
+		}
+	],
+	"sid": 823690587310247
+}

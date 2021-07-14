@@ -1,0 +1,35 @@
+{
+	"name": "Ease 1",
+	"transitionKeyframes": [
+		{
+			"x": 0,
+			"y": 0,
+			"sax": 0.255,
+			"say": -1.733,
+			"eax": 0,
+			"eay": 0,
+			"se": true,
+			"ee": false
+		},
+		{
+			"x": 0.528,
+			"y": 0.583,
+			"sax": 0,
+			"say": 1.325,
+			"eax": -0.025,
+			"eay": 0,
+			"se": true,
+			"ee": true
+		},
+		{
+			"x": 1,
+			"y": 1,
+			"sax": 0,
+			"say": 0,
+			"eax": -0.266,
+			"eay": 0.617,
+			"se": false,
+			"ee": true
+		}
+	]
+}

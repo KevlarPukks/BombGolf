@@ -1,0 +1,306 @@
+{
+	"name": "eGameHUD",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 168783992449896
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "LevelStrokesPanel",
+					"sid": 323389377900170,
+					"disabled": true,
+					"parameters": {
+						"x": "ViewportRight(\"HUD\")-Self.Width",
+						"y": "ViewportTop(\"HUD\")+Self.Height"
+					}
+				},
+				{
+					"id": "add-child",
+					"objectClass": "LevelStrokesPanel",
+					"sid": 403472179602773,
+					"disabled": true,
+					"parameters": {
+						"child": "LevelStrokes",
+						"transform-x": true,
+						"transform-y": true,
+						"transform-w": false,
+						"transform-h": false,
+						"transform-a": true,
+						"transform-z-elevation": true,
+						"destroy-with-parent": false
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "variables",
+					"sid": 759509845292378,
+					"parameters": {
+						"instance-variable": "levelStrokes",
+						"value": "0"
+					}
+				},
+				{
+					"callFunction": "SetStrokesText",
+					"sid": 311729419446673
+				},
+				{
+					"id": "add-to-instvar",
+					"objectClass": "variables",
+					"sid": 398704143546081,
+					"parameters": {
+						"instance-variable": "level",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "CurrentLevel",
+					"sid": 233993792214094,
+					"parameters": {
+						"text": "\"Hole\"&newline&variables.level"
+					}
+				}
+			],
+			"sid": 852775233467377
+		},
+		{
+			"functionName": "SetStrokesText",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "LevelStrokes",
+					"sid": 254559041064343,
+					"parameters": {
+						"text": "\"Hole\"&newline&\"Strokes\"&newline&variables.levelStrokes"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "GameStrokes",
+					"sid": 374564890183727,
+					"parameters": {
+						"text": "\"Course\"&newline&\"Strokes\"&newline&variables.gameStrokes"
+					}
+				}
+			],
+			"sid": 765427850836865
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-enter",
+					"objectClass": "Ball",
+					"sid": 708956473097798,
+					"behaviorType": "BallState",
+					"parameters": {
+						"name0": "\"can hit\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "GameScoresVisible",
+					"sid": 886167331729262
+				}
+			],
+			"sid": 752829706219801
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-enter",
+					"objectClass": "Ball",
+					"sid": 292351411287193,
+					"behaviorType": "BallState",
+					"parameters": {
+						"name0": "\"moving\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "GameScoresInvisible",
+					"sid": 574935384368571
+				}
+			],
+			"sid": 385367827319356
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-enter",
+					"objectClass": "resetCam",
+					"sid": 340280247876701,
+					"behaviorType": "scroll",
+					"parameters": {
+						"name0": "\"disabled\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "GameScoresInvisible",
+					"sid": 770656081593023
+				}
+			],
+			"sid": 348483259718592
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-enter",
+					"objectClass": "resetCam",
+					"sid": 894887500000493,
+					"behaviorType": "scroll",
+					"parameters": {
+						"name0": "\"follow ball\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "GameScoresVisible",
+					"sid": 593515102582199
+				}
+			],
+			"sid": 143073709850002
+		},
+		{
+			"functionName": "GameScoresVisible",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "gameStatTextObjects",
+					"sid": 110075427280194,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "LevelStrokesPanel",
+					"sid": 421536562942455,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 271447337431104
+		},
+		{
+			"functionName": "GameScoresInvisible",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "gameStatTextObjects",
+					"sid": 245614473425570,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "LevelStrokesPanel",
+					"sid": 816996747535099,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 101124032290475
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-enter",
+					"objectClass": "pauseButton",
+					"sid": 533633523882650,
+					"behaviorType": "FSM",
+					"parameters": {
+						"name0": "\"pause\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "GameScoresInvisible",
+					"sid": 732079349918494
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "GameHUDObjects",
+					"sid": 834785890393838,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 730712858682128,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-enter",
+					"objectClass": "pauseButton",
+					"sid": 630209957160988,
+					"behaviorType": "FSM",
+					"parameters": {
+						"name0": "\"unpaused\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "GameScoresVisible",
+					"sid": 223082155297130
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "GameHUDObjects",
+					"sid": 447527270565783,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 966333179558881,
+			"disabled": true
+		}
+	],
+	"sid": 114140407067873
+}

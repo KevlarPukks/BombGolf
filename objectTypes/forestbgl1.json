@@ -1,0 +1,20 @@
+{
+	"name": "forestBgL1",
+	"plugin-id": "TiledBg",
+	"sid": 298756366702906,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 854,
+		"height": 480,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 7553772,
+		"useCollisionPoly": true
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"name": "GameStrokes",
+	"plugin-id": "Text",
+	"sid": 821510996453786,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Anchor",
+			"sid": 244900543597271
+		}
+	],
+	"effectTypes": []
+}

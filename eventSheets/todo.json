@@ -1,0 +1,374 @@
+{
+	"name": "todo",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "add wick to square button using gimp/inkscape",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				0.6784313725490196,
+				0.4980392156862745,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Add scrolling and arrows",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				0,
+				0.5019607843137255,
+				0.058823529411764705,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Add title screen and end screen",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				0,
+				0.4392156862745098,
+				0.10980392156862745,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "calibrate touch and drag shot",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				0.01568627450980392,
+				0.5254901960784314,
+				0.19215686274509805,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "add hit score per game and per level",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				0.10588235294117647,
+				0.4745098039215686,
+				0.00392156862745098,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "add hit score to HUD",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				0.058823529411764705,
+				0.5215686274509804,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "change explosion button",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				0,
+				0.6784313725490196,
+				0.23921568627450981,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "change particle for bombtrail",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				0,
+				0.6588235294117647,
+				0.043137254901960784,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "add level number to hud and game",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				0,
+				0.4392156862745098,
+				0.16862745098039217,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Add hit particle add collisionn particles",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				0.058823529411764705,
+				0.5019607843137255,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "add level score to list",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				0.10196078431372549,
+				0.3803921568627451,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "turn visibility off for the level scores when ball is moving or camera is scrolling ",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				0.17254901960784313,
+				0.5411764705882353,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "add restart button",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				0.058823529411764705,
+				0.5215686274509804,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "add pause menu",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				0.00784313725490196,
+				0.4588235294117647,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Add drag anywhere text when able to hit ball",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				1,
+				0,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Add ball stroke,hit floor,hit ceiling, explosion, hit blocks sound",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				1,
+				0,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "add music",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				1,
+				0,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "add button animations",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				1,
+				0,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "add button sounds",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				1,
+				0,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "add title animation",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				1,
+				0,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "add stroke text flash",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				1,
+				0,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "show level scores after round complete ",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				1,
+				0,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "add more levels",
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				1,
+				0,
+				0,
+				1
+			]
+		}
+	],
+	"sid": 774860614297504
+}

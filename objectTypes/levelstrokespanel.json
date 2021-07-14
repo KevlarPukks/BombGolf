@@ -1,0 +1,63 @@
+{
+	"name": "LevelStrokesPanel",
+	"plugin-id": "Sprite",
+	"sid": 735794805401302,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Anchor",
+			"sid": 767632199580263
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 91,
+						"height": 22,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4677388,
+						"collisionPoly": {
+							"points": [
+								0.0023148148148148147,
+								0.004201680672268907,
+								0.5,
+								0.01680672268907563,
+								0.9953703703703703,
+								0.004201680672268907,
+								0.9907407407407407,
+								0.5,
+								0.9953703703703703,
+								0.9915966386554622,
+								0.5,
+								0.9789915966386554,
+								0.0023148148148148147,
+								0.9915966386554622,
+								0.006944444444444444,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 798594455593860,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

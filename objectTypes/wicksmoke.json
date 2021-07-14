@@ -1,0 +1,20 @@
+{
+	"name": "wicksmoke",
+	"plugin-id": "Particles",
+	"sid": 775313733367169,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 372,
+		"height": 316,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 1416423,
+		"useCollisionPoly": true
+	}
+}

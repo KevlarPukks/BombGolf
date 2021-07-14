@@ -1,0 +1,1164 @@
+{
+	"name": "eBall",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "debug_distance",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 599620245579522
+		},
+		{
+			"eventType": "variable",
+			"name": "debug_power",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 373959865762433
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Physics",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Increase the particles rate of the trail only when the ball is moving at least 32 pixels per second, otherwise set it to zero."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-velocity",
+							"objectClass": "Ball",
+							"sid": 740019153756394,
+							"behaviorType": "Physics",
+							"parameters": {
+								"which": "overall-velocity",
+								"comparison": 4,
+								"value": "32"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-rate",
+							"objectClass": "Trail",
+							"sid": 947300299223841,
+							"parameters": {
+								"rate": "32"
+							}
+						}
+					],
+					"sid": 242478397019052
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 658568632104537
+						}
+					],
+					"actions": [
+						{
+							"id": "set-rate",
+							"objectClass": "Trail",
+							"sid": 695696683721412,
+							"parameters": {
+								"rate": "0"
+							}
+						}
+					],
+					"sid": 248142812934989
+				}
+			],
+			"sid": 701421708020806
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Trail",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Setup the trail by adding it as child of the ball."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Trail",
+							"sid": 600495549043922
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Trail",
+							"sid": 105494706684152,
+							"parameters": {
+								"object": "Ball",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "Ball",
+							"sid": 212771563143026,
+							"parameters": {
+								"child": "Trail",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-z-elevation": false,
+								"destroy-with-parent": true
+							}
+						}
+					],
+					"sid": 673642812914168
+				}
+			],
+			"sid": 206423717884517
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Ball State and Physics",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Create a cursor when a touch is started."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-nth-touch-start",
+							"objectClass": "Touch",
+							"sid": 712191565827965,
+							"parameters": {
+								"touch-number": "0"
+							}
+						},
+						{
+							"id": "compare-current-state",
+							"objectClass": "Ball",
+							"sid": 552513969567966,
+							"behaviorType": "BallState",
+							"parameters": {
+								"name0": "\"can hit\""
+							}
+						},
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 226320610553578,
+							"parameters": {
+								"object": "GameHUDObjects"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-current-state",
+							"objectClass": "resetCam",
+							"sid": 719540604339348,
+							"behaviorType": "scroll",
+							"parameters": {
+								"name0": "\"disabled\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 737091354661219,
+							"parameters": {
+								"object": "pauseButton"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-current-state",
+							"objectClass": "pauseButton",
+							"sid": 740514596336222,
+							"behaviorType": "FSM",
+							"parameters": {
+								"name0": "\"unpaused\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 992193737676883,
+							"parameters": {
+								"object-to-create": "Cursor",
+								"layer": "\"HUD\"",
+								"x": "Touch.X",
+								"y": "Touch.Y",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Ball",
+							"sid": 689270219927180,
+							"parameters": {
+								"instance-variable": "touchStarted",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 167448573506348
+				},
+				{
+					"eventType": "comment",
+					"text": "While the touch is active, update the angle and width of the ruler to follow the touch position."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-current-state",
+							"objectClass": "Ball",
+							"sid": 170849924439432,
+							"behaviorType": "BallState",
+							"parameters": {
+								"name0": "\"can hit\""
+							}
+						},
+						{
+							"id": "has-nth-touch",
+							"objectClass": "Touch",
+							"sid": 693322612325750,
+							"parameters": {
+								"touch-number": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-toward-position",
+							"objectClass": "powergauge",
+							"sid": 180270968204294,
+							"parameters": {
+								"x": "Touch.X",
+								"y": "Touch.Y"
+							}
+						},
+						{
+							"id": "set-width",
+							"objectClass": "powergauge",
+							"sid": 836865458179415,
+							"parameters": {
+								"width": "clamp(distance(Self.X, Self.Y, Touch.X, Touch.Y),0,Ball.hitPowerLengthMax)"
+							}
+						},
+						{
+							"id": "set-width",
+							"objectClass": "Sprite",
+							"sid": 475171490456266,
+							"disabled": true,
+							"parameters": {
+								"width": "clamp(distance(Self.X, Self.Y, Touch.X, Touch.Y),0,Ball.hitPowerLengthMax)"
+							}
+						},
+						{
+							"id": "set-angle-toward-position",
+							"objectClass": "Sprite",
+							"sid": 569849610714248,
+							"disabled": true,
+							"parameters": {
+								"x": "Touch.X",
+								"y": "Touch.Y"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Ball",
+							"sid": 236337951675561,
+							"parameters": {
+								"instance-variable": "hitPowerLength",
+								"value": "clamp(distance(Cursor.X, Cursor.Y, Touch.X, Touch.Y),0,Ball.hitPowerLengthMax)"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "powergauge",
+							"sid": 198360834806982,
+							"parameters": {
+								"opacity": "Ball.hitPowerLength/Ball.hitPowerLengthMax*100+25"
+							}
+						}
+					],
+					"sid": 689495363631714
+				},
+				{
+					"eventType": "comment",
+					"text": "Once the touch is over, apply force based on the distance between the initially created cursor and the current touch position."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-nth-touch-end",
+							"objectClass": "Touch",
+							"sid": 964895323182267,
+							"parameters": {
+								"touch-number": "0"
+							}
+						},
+						{
+							"id": "compare-current-state",
+							"objectClass": "Ball",
+							"sid": 394225947547382,
+							"behaviorType": "BallState",
+							"parameters": {
+								"name0": "\"can hit\""
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Ball",
+							"sid": 341817073285591,
+							"parameters": {
+								"instance-variable": "touchStarted"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-velocity",
+							"objectClass": "Ball",
+							"sid": 526160078020635,
+							"behaviorType": "Physics",
+							"parameters": {
+								"x-component": "0",
+								"y-component": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Ball",
+							"sid": 429998069254837,
+							"parameters": {
+								"instance-variable": "powerScale",
+								"value": "Ball.hitPowerLength/Ball.hitPowerLengthMax"
+							}
+						},
+						{
+							"id": "apply-impulse-at-angle",
+							"objectClass": "Ball",
+							"sid": 587639400424288,
+							"behaviorType": "Physics",
+							"parameters": {
+								"impulse": "Ball.powerScale*Ball.hitPower",
+								"angle": "angle(Cursor.X, Cursor.Y, Touch.X, Touch.Y) + 180",
+								"image-point": "0"
+							}
+						},
+						{
+							"id": "goto-state",
+							"objectClass": "Ball",
+							"sid": 987136373853847,
+							"behaviorType": "BallState",
+							"parameters": {
+								"name0": "\"moving\""
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Ball",
+							"sid": 246954332506928,
+							"parameters": {
+								"instance-variable": "touchStarted",
+								"value": "false"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Also destroy the cursor, since it wont be needed anymore."
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Cursor",
+							"sid": 942629726302651
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 350459411040764,
+							"parameters": {
+								"variable": "levelHits",
+								"value": "1"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 559776456387332,
+							"parameters": {
+								"variable": "totalHits",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 629100274820073,
+							"parameters": {
+								"variable": "debug_distance",
+								"value": "angle(Cursor.X, Cursor.Y, Touch.X, Touch.Y)"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "distA",
+							"sid": 894946004436370,
+							"parameters": {
+								"object": "Ball",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "debugPower",
+							"sid": 650287478462242,
+							"parameters": {
+								"text": "\"power:\"&Ball.powerScale"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "variables",
+							"sid": 712234291098916,
+							"parameters": {
+								"instance-variable": "gameStrokes",
+								"value": "1"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "variables",
+							"sid": 571890611477399,
+							"parameters": {
+								"instance-variable": "levelStrokes",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "SetStrokesText",
+							"sid": 609176260340455
+						},
+						{
+							"id": "set-text",
+							"objectClass": "LevelStrokes",
+							"sid": 984046674841894,
+							"disabled": true,
+							"parameters": {
+								"text": "\"Level\"&newline&\"Strokes\"&newline&variables.levelStrokes"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "debug_distance",
+							"sid": 850828671342607,
+							"parameters": {
+								"text": "\"angle:\"&debug_distance"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Stroke effect"
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Ball",
+							"sid": 663099187930312,
+							"parameters": {
+								"object": "strokeEffect",
+								"layer": "\"effects\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "strokeEffect",
+							"sid": 604095639373530,
+							"parameters": {
+								"size": "Ball.Height"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "strokeEffect",
+							"sid": 605601524684711,
+							"parameters": {
+								"angle": "debug_distance"
+							}
+						}
+					],
+					"sid": 144876632718965,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-in-preview",
+									"objectClass": "System",
+									"sid": 318474755686027
+								}
+							],
+							"actions": [],
+							"sid": 230142523992266
+						}
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Ball Debug",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-in-preview",
+									"objectClass": "System",
+									"sid": 696656051352055
+								}
+							],
+							"actions": [
+								{
+									"id": "set-x",
+									"objectClass": "debugPower",
+									"sid": 439040959352704,
+									"parameters": {
+										"x": "ViewportRight(\"world\")-ViewportWidth(\"world\")/2"
+									}
+								},
+								{
+									"id": "set-x",
+									"objectClass": "debug_distance",
+									"sid": 461401545254513,
+									"parameters": {
+										"x": "ViewportRight(\"world\")-ViewportWidth(\"world\")/2"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 848791520682576,
+									"disabled": true,
+									"parameters": {
+										"variable": "debug_distance",
+										"value": "distance(distA.X,distB.Y,Ball.X,Ball.Y)-404"
+									}
+								}
+							],
+							"sid": 460845977733471
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 240735398256032
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 294065169004756
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "debug_distance",
+									"sid": 985070504153602
+								},
+								{
+									"id": "destroy",
+									"objectClass": "debugPower",
+									"sid": 502889560368620
+								}
+							],
+							"sid": 357788070619384
+						}
+					],
+					"sid": 381671324199494
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-state-changed",
+							"objectClass": "Ball",
+							"sid": 665350141233868,
+							"behaviorType": "BallState"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Ball",
+							"sid": 913906382698142,
+							"parameters": {
+								"instance-variable": "state",
+								"value": "Ball.BallState.CurrentState"
+							}
+						}
+					],
+					"sid": 722900635928925
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-velocity",
+							"objectClass": "Ball",
+							"sid": 101311777733236,
+							"behaviorType": "Physics",
+							"parameters": {
+								"which": "overall-velocity",
+								"comparison": 3,
+								"value": "Ball.maxExplodeSpeed"
+							}
+						},
+						{
+							"id": "compare-current-state",
+							"objectClass": "Ball",
+							"sid": 367361656120266,
+							"behaviorType": "BallState",
+							"parameters": {
+								"name0": "\"moving\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "goto-state",
+							"objectClass": "Ball",
+							"sid": 488666659321880,
+							"behaviorType": "BallState",
+							"parameters": {
+								"name0": "\"stopped moving\""
+							}
+						}
+					],
+					"sid": 875180811582153
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-velocity",
+							"objectClass": "Ball",
+							"sid": 599186906135565,
+							"behaviorType": "Physics",
+							"parameters": {
+								"which": "overall-velocity",
+								"comparison": 4,
+								"value": "Ball.maxExplodeSpeed"
+							}
+						},
+						{
+							"id": "compare-current-state",
+							"objectClass": "Ball",
+							"sid": 701311378754928,
+							"behaviorType": "BallState",
+							"parameters": {
+								"name0": "\"stopped moving\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "goto-state",
+							"objectClass": "Ball",
+							"sid": 134969524397747,
+							"behaviorType": "BallState",
+							"parameters": {
+								"name0": "\"moving\""
+							}
+						},
+						{
+							"id": "stop-timer",
+							"objectClass": "Ball",
+							"sid": 828541462628317,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"\""
+							}
+						}
+					],
+					"sid": 776694768800640
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-enter",
+							"objectClass": "Ball",
+							"sid": 512449275082888,
+							"behaviorType": "BallState",
+							"parameters": {
+								"name0": "\"stopped moving\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "Ball",
+							"sid": 472477946406536,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "Ball.noMovementTimeout",
+								"type": "once",
+								"tag": "\"\""
+							}
+						}
+					],
+					"sid": 614424530522437
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-enter",
+							"objectClass": "Ball",
+							"sid": 268872369492303,
+							"behaviorType": "BallState",
+							"parameters": {
+								"name0": "\"can hit\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "Ball",
+							"sid": 467283668418427,
+							"disabled": true,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"state": "disabled"
+							}
+						}
+					],
+					"sid": 325981457618655
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Ball",
+							"sid": 585609183287110,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "goto-state",
+							"objectClass": "Ball",
+							"sid": 268907463691869,
+							"behaviorType": "BallState",
+							"parameters": {
+								"name0": "\"can hit\""
+							}
+						}
+					],
+					"sid": 658677381880306
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-enter",
+							"objectClass": "Ball",
+							"sid": 496459236603864,
+							"behaviorType": "BallState",
+							"parameters": {
+								"name0": "\"moving\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "Ball",
+							"sid": 348967584043884,
+							"disabled": true,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 953397612506172
+				}
+			],
+			"sid": 844140871166370
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "groundCollisions",
+					"sid": 321017184179177,
+					"parameters": {
+						"object": "Ball"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Ball",
+					"sid": 385489396624620,
+					"parameters": {
+						"instance-variable": "onFloor",
+						"value": "true"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 339072024148527,
+					"parameters": {
+						"object-to-create": "floorcollisionParticle",
+						"layer": "\"effects\"",
+						"x": "Ball.Physics.ContactXAt(0)",
+						"y": "Ball.Physics.ContactYAt(0)",
+						"create-hierarchy": false
+					}
+				}
+			],
+			"sid": 378613345866545
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "groundCollisions",
+					"sid": 735761783378066,
+					"parameters": {
+						"object": "Ball"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Ball",
+					"sid": 193508014714807,
+					"parameters": {
+						"instance-variable": "onFloor",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 473163309053413
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 387584138080903
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "Ball",
+					"sid": 435888753167402,
+					"parameters": {
+						"object": "Start",
+						"image-point-optional": "0"
+					}
+				}
+			],
+			"sid": 997685924767406
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-destroyed",
+					"objectClass": "Ball",
+					"sid": 357895522449058
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Start",
+					"sid": 478557056519005,
+					"parameters": {
+						"object": "Ball",
+						"layer": "\"world\"",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "goto-state",
+					"objectClass": "Ball",
+					"sid": 933310453509774,
+					"behaviorType": "BallState",
+					"parameters": {
+						"name0": "\"moving\""
+					}
+				},
+				{
+					"id": "set-prevent-rotation",
+					"objectClass": "Ball",
+					"sid": 483504287886206,
+					"behaviorType": "Physics",
+					"parameters": {
+						"setting": "prevent-rotations"
+					}
+				},
+				{
+					"id": "move-to-bottom",
+					"objectClass": "Ball",
+					"sid": 675601730939998
+				}
+			],
+			"sid": 679624678653335
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Ball",
+					"sid": 444161693663866,
+					"parameters": {
+						"object": "hole"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-immovable",
+					"objectClass": "Ball",
+					"sid": 132216958236443,
+					"behaviorType": "Physics",
+					"parameters": {
+						"setting": "immovable"
+					}
+				}
+			],
+			"sid": 359921286343917
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Ball",
+					"sid": 785794273055154,
+					"parameters": {
+						"object": "waterCollisions4"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "ResetBall",
+					"sid": 344984456850972
+				}
+			],
+			"sid": 539649079393187
+		},
+		{
+			"functionName": "ResetBall",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "Ball",
+					"sid": 519128018687322,
+					"parameters": {
+						"object": "Start",
+						"image-point-optional": "0"
+					}
+				}
+			],
+			"sid": 286466218520262
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 464336846604805
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Ball",
+					"sid": 636087635218110,
+					"parameters": {
+						"instance-variable": "hitPowerLengthMax",
+						"value": "600"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Ball",
+					"sid": 166993965962113,
+					"parameters": {
+						"instance-variable": "hitPower",
+						"value": "10"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Ball",
+					"sid": 900471779230854,
+					"parameters": {
+						"instance-variable": "noMovementTimeout",
+						"value": "0.6"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Ball",
+					"sid": 772614197522712,
+					"parameters": {
+						"instance-variable": "maxExplodeSpeed",
+						"value": "5"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Ball",
+					"sid": 770565812207655,
+					"parameters": {
+						"instance-variable": "explosionDistance",
+						"value": "200"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Ball",
+					"sid": 259973762300195,
+					"parameters": {
+						"instance-variable": "explosionPower",
+						"value": "6"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Ball",
+					"sid": 768104167600905,
+					"parameters": {
+						"object": "wickLight",
+						"layer": "\"effects\"",
+						"image-point": "1",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "add-child",
+					"objectClass": "Ball",
+					"sid": 237973452703114,
+					"parameters": {
+						"child": "wickLight",
+						"transform-x": true,
+						"transform-y": true,
+						"transform-w": false,
+						"transform-h": false,
+						"transform-a": true,
+						"transform-z-elevation": true,
+						"destroy-with-parent": false
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Ball",
+					"sid": 123187045177396,
+					"parameters": {
+						"object": "wicksmoke",
+						"layer": "\"world\"",
+						"image-point": "1",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "add-child",
+					"objectClass": "Ball",
+					"sid": 411000753816945,
+					"parameters": {
+						"child": "wicksmoke",
+						"transform-x": true,
+						"transform-y": true,
+						"transform-w": false,
+						"transform-h": false,
+						"transform-a": true,
+						"transform-z-elevation": true,
+						"destroy-with-parent": false
+					}
+				},
+				{
+					"id": "move-to-bottom",
+					"objectClass": "Trail",
+					"sid": 117165204395385
+				},
+				{
+					"id": "move-to-top",
+					"objectClass": "wickLight",
+					"sid": 905126414857037
+				},
+				{
+					"id": "move-to-bottom",
+					"objectClass": "wicksmoke",
+					"sid": 467543461431089
+				}
+			],
+			"sid": 544106163603121
+		}
+	],
+	"sid": 924502142333177
+}

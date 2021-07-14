@@ -1,0 +1,289 @@
+{
+	"name": "eExplodeButton",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Centre button",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 316058844243165
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "explodeButton",
+							"sid": 858222130702847,
+							"disabled": true,
+							"parameters": {
+								"x": "ViewportRight(\"world\")-ViewportWidth(\"world\")/2"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "exploddeText",
+							"sid": 379880001651119,
+							"disabled": true,
+							"parameters": {
+								"x": "explodeButton.X",
+								"y": "explodeButton.Y"
+							}
+						}
+					],
+					"sid": 630839437747433
+				}
+			],
+			"sid": 646398019433909
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Explode Button Pressed",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 664565978545425,
+							"parameters": {
+								"object": "explodeButton"
+							}
+						},
+						{
+							"id": "compare-current-state",
+							"objectClass": "Ball",
+							"sid": 593866039309514,
+							"behaviorType": "BallState",
+							"parameters": {
+								"name0": "\"can hit\""
+							}
+						},
+						{
+							"id": "compare-current-state",
+							"objectClass": "resetCam",
+							"sid": 210757266582949,
+							"behaviorType": "scroll",
+							"parameters": {
+								"name0": "\"follow ball\""
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 492714439453277,
+							"parameters": {
+								"first-value": "explosion.Count",
+								"comparison": 3,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "compare-current-state",
+							"objectClass": "pauseButton",
+							"sid": 482792393775552,
+							"behaviorType": "FSM",
+							"parameters": {
+								"name0": "\"unpaused\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "BallExplode",
+							"sid": 871726289264773
+						}
+					],
+					"sid": 515407608990795
+				}
+			],
+			"sid": 837138044104545
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Set Explode Button Visibility",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-enter",
+							"objectClass": "Ball",
+							"sid": 280891220926366,
+							"behaviorType": "BallState",
+							"parameters": {
+								"name0": "\"moving\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "explodeButton",
+							"sid": 646921541306002,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "explodeButton",
+							"sid": 810812201889128,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "exploddeText",
+							"sid": 211089608914348,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 688015214603054
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-enter",
+							"objectClass": "resetCam",
+							"sid": 447476531229335,
+							"behaviorType": "scroll",
+							"parameters": {
+								"name0": "\"follow ball\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "explodeButton",
+							"sid": 566996008714319,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "explodeButton",
+							"sid": 977297505276871,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "exploddeText",
+							"sid": 607632462878322,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 306769785186666
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-enter",
+							"objectClass": "resetCam",
+							"sid": 877101187615099,
+							"behaviorType": "scroll",
+							"parameters": {
+								"name0": "\"disabled\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "explodeButton",
+							"sid": 934022926677945,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "explodeButton",
+							"sid": 868284823513120,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "exploddeText",
+							"sid": 918437325665870,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 250407347843709
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-enter",
+							"objectClass": "Ball",
+							"sid": 870745051445365,
+							"behaviorType": "BallState",
+							"parameters": {
+								"name0": "\"can hit\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "explodeButton",
+							"sid": 414838390223689,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "explodeButton",
+							"sid": 459464999412743,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "exploddeText",
+							"sid": 788999270907620,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 369635731102965
+				}
+			],
+			"sid": 468864269234777
+		}
+	],
+	"sid": 739863103518197
+}

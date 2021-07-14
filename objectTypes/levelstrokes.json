@@ -1,0 +1,15 @@
+{
+	"name": "LevelStrokes",
+	"plugin-id": "Text",
+	"sid": 731616450165699,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Anchor",
+			"sid": 112848845410453
+		}
+	],
+	"effectTypes": []
+}

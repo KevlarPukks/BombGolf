@@ -1,0 +1,26 @@
+{
+	"name": "forestBg",
+	"plugin-id": "TiledBg",
+	"sid": 420050822001310,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Anchor",
+			"sid": 212343599620608
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 854,
+		"height": 480,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 460138,
+		"useCollisionPoly": true
+	}
+}

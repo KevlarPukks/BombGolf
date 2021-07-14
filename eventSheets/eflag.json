@@ -1,0 +1,31 @@
+{
+	"name": "eFlag",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Flag",
+					"sid": 749288795564446,
+					"parameters": {
+						"object": "Ball"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-nextprevious-layout",
+					"objectClass": "System",
+					"sid": 952212923227590,
+					"parameters": {
+						"which": "next"
+					}
+				}
+			],
+			"sid": 913127793420261,
+			"disabled": true
+		}
+	],
+	"sid": 581289075799963
+}

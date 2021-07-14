@@ -1,0 +1,56 @@
+{
+	"name": "variables",
+	"plugin-id": "Sprite",
+	"sid": 235380265858487,
+	"isGlobal": true,
+	"instanceVariables": [
+		{
+			"name": "gameStrokes",
+			"type": "number",
+			"desc": "",
+			"sid": 462025909374865
+		},
+		{
+			"name": "levelStrokes",
+			"type": "number",
+			"desc": "",
+			"sid": 297567722334957
+		},
+		{
+			"name": "level",
+			"type": "number",
+			"desc": "",
+			"sid": 149924356337302
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9829478,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 124898086149330,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

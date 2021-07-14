@@ -1,0 +1,51 @@
+{
+	"name": "eRestartButton",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 804261918196267
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "play",
+					"sid": 391065386274425,
+					"parameters": {
+						"x": "ViewportWidth(0)/2"
+					}
+				}
+			],
+			"sid": 843097204844862
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 672237761141026,
+					"parameters": {
+						"object": "play"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 799856537760571,
+					"parameters": {
+						"layout": "title"
+					}
+				}
+			],
+			"sid": 640818798795643
+		}
+	],
+	"sid": 722851545318484
+}

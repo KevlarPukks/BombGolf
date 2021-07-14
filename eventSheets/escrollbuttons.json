@@ -1,0 +1,630 @@
+{
+	"name": "eScrollButtons",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "scrollSpeed",
+			"type": "number",
+			"initialValue": "500",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 359897045676136
+		},
+		{
+			"eventType": "variable",
+			"name": "currentScrollSpeed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 602150447882413
+		},
+		{
+			"eventType": "variable",
+			"name": "scrollSpeedx2",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 499507400791444
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 628499264189892
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 826025474560496,
+					"parameters": {
+						"variable": "currentScrollSpeed",
+						"value": "scrollSpeed"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "leftArrow",
+					"sid": 702493621283524,
+					"parameters": {
+						"x": "ViewportLeft(\"HUD\")+Self.Width/2",
+						"y": "ViewportHeight(\"HUD\")/2"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "rightArrow",
+					"sid": 898696018391680,
+					"parameters": {
+						"x": "ViewportRight(0)-Self.Width/2",
+						"y": "ViewportHeight(0)/2"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "resetCam",
+					"sid": 175629571859667,
+					"disabled": true,
+					"parameters": {
+						"x": "ViewportLeft(0)+Self.Width/2+Self.xOffset",
+						"y": "ViewportTop(0)+Self.Height/2+Self.yOffset"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "GameHUDObjects",
+					"sid": 131073290093798,
+					"behaviorType": "Anchor",
+					"parameters": {
+						"state": "enabled"
+					}
+				}
+			],
+			"sid": 394996300943135
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 542489734863772
+				}
+			],
+			"actions": [],
+			"sid": 786440201159441
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Scrolling",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 212820961769102,
+							"parameters": {
+								"object": "rightArrow"
+							}
+						},
+						{
+							"id": "compare-current-state",
+							"objectClass": "pauseButton",
+							"sid": 478499722222502,
+							"behaviorType": "FSM",
+							"parameters": {
+								"name0": "\"unpaused\""
+							}
+						},
+						{
+							"id": "compare-current-state",
+							"objectClass": "Ball",
+							"sid": 768652799859738,
+							"behaviorType": "BallState",
+							"parameters": {
+								"name0": "\"can hit\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "scroll-to-x",
+							"objectClass": "System",
+							"sid": 869901253489994,
+							"parameters": {
+								"x": "scrollx+currentScrollSpeed*dt*rightArrow.speeddx2"
+							}
+						}
+					],
+					"sid": 910218261997136
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 409225951019786
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-timer",
+							"objectClass": "rightArrow",
+							"sid": 413571580899294,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "rightArrow",
+							"sid": 116424122995797,
+							"parameters": {
+								"instance-variable": "speeddx2",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 407537218306709
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "rightArrow",
+							"sid": 354647284860377,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "rightArrow",
+							"sid": 317089507939919,
+							"parameters": {
+								"instance-variable": "speeddx2",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 838874894645970
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 889069039821847,
+							"parameters": {
+								"object": "rightArrow"
+							}
+						},
+						{
+							"id": "compare-current-state",
+							"objectClass": "pauseButton",
+							"sid": 694581251715223,
+							"behaviorType": "FSM",
+							"parameters": {
+								"name0": "\"unpaused\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "rightArrow",
+							"sid": 217022860847419,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "rightArrow.doubleSpeedTime",
+								"type": "once",
+								"tag": "\"\""
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Ball",
+							"sid": 588062321350648,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "goto-state",
+							"objectClass": "resetCam",
+							"sid": 233541665917891,
+							"behaviorType": "scroll",
+							"parameters": {
+								"name0": "\"disabled\""
+							}
+						}
+					],
+					"sid": 446523754027778
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 637083707203830,
+							"parameters": {
+								"object": "leftArrow"
+							}
+						},
+						{
+							"id": "compare-current-state",
+							"objectClass": "pauseButton",
+							"sid": 457682295913321,
+							"behaviorType": "FSM",
+							"parameters": {
+								"name0": "\"unpaused\""
+							}
+						},
+						{
+							"id": "compare-current-state",
+							"objectClass": "Ball",
+							"sid": 916222241372084,
+							"behaviorType": "BallState",
+							"parameters": {
+								"name0": "\"can hit\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "scroll-to-x",
+							"objectClass": "System",
+							"sid": 648658362394828,
+							"parameters": {
+								"x": "scrollx-scrollSpeed*dt*leftArrow.speedx2"
+							}
+						}
+					],
+					"sid": 179879088147452
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 421280955688657
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-timer",
+							"objectClass": "leftArrow",
+							"sid": 275210148549811,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "leftArrow",
+							"sid": 545517954288275,
+							"parameters": {
+								"instance-variable": "speedx2",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 995360342946519
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "leftArrow",
+							"sid": 649346330870275,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "leftArrow",
+							"sid": 642397590658998,
+							"parameters": {
+								"instance-variable": "speedx2",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 507637694163367
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 903395682181379,
+							"parameters": {
+								"object": "leftArrow"
+							}
+						},
+						{
+							"id": "compare-current-state",
+							"objectClass": "pauseButton",
+							"sid": 967317572837018,
+							"behaviorType": "FSM",
+							"parameters": {
+								"name0": "\"unpaused\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "leftArrow",
+							"sid": 910627478036643,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "rightArrow.doubleSpeedTime",
+								"type": "once",
+								"tag": "\"\""
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Ball",
+							"sid": 927014805681201,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "goto-state",
+							"objectClass": "resetCam",
+							"sid": 587357683601806,
+							"behaviorType": "scroll",
+							"parameters": {
+								"name0": "\"disabled\""
+							}
+						}
+					],
+					"sid": 223087075721893
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 241819251699887,
+							"parameters": {
+								"object": "resetCam"
+							}
+						},
+						{
+							"id": "compare-current-state",
+							"objectClass": "pauseButton",
+							"sid": 872149625047052,
+							"behaviorType": "FSM",
+							"parameters": {
+								"name0": "\"unpaused\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "Ball",
+							"sid": 914901279565237,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "goto-state",
+							"objectClass": "resetCam",
+							"sid": 397919385220021,
+							"behaviorType": "scroll",
+							"parameters": {
+								"name0": "\"follow ball\""
+							}
+						}
+					],
+					"sid": 376624220253322
+				}
+			],
+			"sid": 178591032311533
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-enter",
+					"objectClass": "Ball",
+					"sid": 899548701417378,
+					"behaviorType": "BallState",
+					"parameters": {
+						"name0": "\"can hit\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "leftArrow",
+					"sid": 970458640325092,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "rightArrow",
+					"sid": 125086857961809,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "leftArrow",
+					"sid": 577963657896883,
+					"parameters": {
+						"collisions": "enabled"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "rightArrow",
+					"sid": 641929658564113,
+					"parameters": {
+						"collisions": "enabled"
+					}
+				}
+			],
+			"sid": 751935771959030
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-enter",
+					"objectClass": "Ball",
+					"sid": 941644398731225,
+					"behaviorType": "BallState",
+					"parameters": {
+						"name0": "\"moving\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "leftArrow",
+					"sid": 521724164107277,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "rightArrow",
+					"sid": 856564077028664,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "leftArrow",
+					"sid": 309440331095535,
+					"parameters": {
+						"collisions": "disabled"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "rightArrow",
+					"sid": 681109747808830,
+					"parameters": {
+						"collisions": "disabled"
+					}
+				}
+			],
+			"sid": 398604319075178
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-enter",
+					"objectClass": "resetCam",
+					"sid": 513056503511614,
+					"behaviorType": "scroll",
+					"parameters": {
+						"name0": "\"disabled\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "resetCam",
+					"sid": 356358215386475,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "resetCam",
+					"sid": 553300809595130,
+					"parameters": {
+						"collisions": "enabled"
+					}
+				}
+			],
+			"sid": 103520260318981
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-enter",
+					"objectClass": "resetCam",
+					"sid": 260622838216124,
+					"behaviorType": "scroll",
+					"parameters": {
+						"name0": "\"follow ball\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "resetCam",
+					"sid": 881856932282298,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "resetCam",
+					"sid": 472041731546499,
+					"parameters": {
+						"collisions": "disabled"
+					}
+				}
+			],
+			"sid": 566395285382469
+		}
+	],
+	"sid": 590363686292036
+}

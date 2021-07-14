@@ -1,0 +1,78 @@
+{
+	"name": "pauseButton",
+	"plugin-id": "Sprite",
+	"sid": 766361440921759,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Variable1",
+			"type": "string",
+			"desc": "",
+			"sid": 591965261995322
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "aaXe_FSM",
+			"name": "FSM",
+			"sid": 565435486888196
+		},
+		{
+			"behaviorId": "Anchor",
+			"name": "Anchor",
+			"sid": 360474353205539
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 178,
+						"height": 180,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5457856,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 430043082246462,
+				"name": "pause",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 178,
+						"height": 180,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3545621,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 942791078778696,
+				"name": "play",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

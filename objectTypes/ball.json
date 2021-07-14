@@ -1,0 +1,173 @@
+{
+	"name": "Ball",
+	"plugin-id": "Sprite",
+	"sid": 935601373358773,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "explosionDistance",
+			"type": "number",
+			"desc": "",
+			"sid": 663838029766226
+		},
+		{
+			"name": "explosionPower",
+			"type": "number",
+			"desc": "",
+			"sid": 631167382446236
+		},
+		{
+			"name": "maxExplodeSpeed",
+			"type": "number",
+			"desc": "",
+			"sid": 949022111323957
+		},
+		{
+			"name": "touchStarted",
+			"type": "boolean",
+			"desc": "",
+			"sid": 162455861575567
+		},
+		{
+			"name": "noMovementTimeout",
+			"type": "number",
+			"desc": "",
+			"sid": 778290160847126
+		},
+		{
+			"name": "canHit",
+			"type": "boolean",
+			"desc": "",
+			"sid": 420242897871596
+		},
+		{
+			"name": "state",
+			"type": "string",
+			"desc": "",
+			"sid": 574475468920441
+		},
+		{
+			"name": "hitPower",
+			"type": "number",
+			"desc": "",
+			"sid": 688712455130864
+		},
+		{
+			"name": "onFloor",
+			"type": "boolean",
+			"desc": "",
+			"sid": 119466102707837
+		},
+		{
+			"name": "hitPowerLengthMax",
+			"type": "number",
+			"desc": "",
+			"sid": 777394409880601
+		},
+		{
+			"name": "powerScale",
+			"type": "number",
+			"desc": "",
+			"sid": 296520296866517
+		},
+		{
+			"name": "hitPowerLength",
+			"type": "number",
+			"desc": "",
+			"sid": 447354671626057
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 492358102448195
+		},
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 663614159874696
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 850783407888821
+		},
+		{
+			"behaviorId": "aaXe_FSM",
+			"name": "BallState",
+			"sid": 749103183170193
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 8,
+						"height": 8,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 420365206986992,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 213,
+						"height": 213,
+						"originX": 0.6009389671361502,
+						"originY": 0.6009389671361502,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8147605,
+						"collisionPoly": {
+							"points": [
+								0.27230046948356834,
+								0.25821596244131473,
+								1,
+								0.004694835680751174,
+								1,
+								1,
+								0.004694835680751174,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "wicklight",
+								"x": 0.22535211267605634,
+								"y": 0.17370892018779344
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 204453766560723,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

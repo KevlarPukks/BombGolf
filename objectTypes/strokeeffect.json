@@ -1,0 +1,25 @@
+{
+	"name": "strokeEffect",
+	"plugin-id": "Particles",
+	"sid": 235469957838455,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "brightness",
+			"name": "Brightness"
+		}
+	],
+	"image": {
+		"width": 164,
+		"height": 157,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 484141,
+		"useCollisionPoly": true
+	}
+}

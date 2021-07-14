@@ -1,0 +1,138 @@
+{
+	"name": "eHole",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Confetti",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Spawn a bunch of confetti once the ball collides with the trigger zone."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Ball",
+							"sid": 704782359640636,
+							"parameters": {
+								"object": "hole"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Destroy the trigger zone, so it can't be triggered twice."
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "hole",
+							"sid": 976233589868862,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "hole.nextLevelDelay",
+								"type": "once",
+								"tag": "\"\""
+							}
+						},
+						{
+							"id": "insert",
+							"objectClass": "levelScore",
+							"sid": 277033552084768,
+							"parameters": {
+								"value": "variables.levelStrokes",
+								"index": "variables.level",
+								"axis": "x"
+							}
+						}
+					],
+					"sid": 809980952167493,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 621737609143588,
+									"parameters": {
+										"count": "24"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 822239644942460,
+									"parameters": {
+										"object-to-create": "Confetti",
+										"layer": "\"world\"",
+										"x": "hole.X",
+										"y": "hole.Y",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"type": "comment",
+									"text": "Randomize both angle of motion and speed of each confetti to create a more dynamic effect."
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "Confetti",
+									"sid": 570799748037447,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "random(270 - 15, 270 + 15)"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "Confetti",
+									"sid": 644078061589758,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "random(192, 384)"
+									}
+								}
+							],
+							"sid": 738618193041829
+						}
+					]
+				}
+			],
+			"sid": 821127174776617
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "hole",
+					"sid": 362455805227572,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-nextprevious-layout",
+					"objectClass": "System",
+					"sid": 429557456422585,
+					"parameters": {
+						"which": "next"
+					}
+				}
+			],
+			"sid": 220661774273971
+		}
+	],
+	"sid": 373354211919055
+}

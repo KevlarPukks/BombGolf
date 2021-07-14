@@ -1,0 +1,51 @@
+{
+	"name": "ePlayButton",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 733921749563364
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "play",
+					"sid": 837522870302843,
+					"parameters": {
+						"x": "ViewportWidth(0)/2"
+					}
+				}
+			],
+			"sid": 548226474211810
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 547630661676975,
+					"parameters": {
+						"object": "play"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-nextprevious-layout",
+					"objectClass": "System",
+					"sid": 740032361311322,
+					"parameters": {
+						"which": "next"
+					}
+				}
+			],
+			"sid": 895042761641112
+		}
+	],
+	"sid": 808110819147791
+}

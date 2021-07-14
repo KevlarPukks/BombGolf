@@ -1,0 +1,50 @@
+{
+	"name": "hole",
+	"plugin-id": "Sprite",
+	"sid": 266800425050765,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "nextLevelDelay",
+			"type": "number",
+			"desc": "",
+			"sid": 452770296456256
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 825903341754733
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8433772,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 302979833139160,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

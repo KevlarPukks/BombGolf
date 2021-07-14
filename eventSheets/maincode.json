@@ -1,0 +1,153 @@
+{
+	"name": "MainCode",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "levelHits",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 630493246929131
+		},
+		{
+			"eventType": "variable",
+			"name": "totalHits",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 841016441643403
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "eFlag"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "eBall"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "eExplodeButton"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "eBlock"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "eHole"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "eScrollButtons"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "eGameHUD"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "ePauseMenu"
+		},
+		{
+			"eventType": "comment",
+			"text": "Made by Viridino Studios (@ViridinoStudios)\n\nMateus Ferreira - Programmer\nTwitter: @BonzerKitten\nE-mail: ferreiramoreiramateus@gmail.com\n\nWesley Andrade - Artist\nTwitter: @andrart7\nE-mail: wesleymatos1989@gmail.com\n\nMade with the support of patrons on https://www.patreon.com/viridinostudios"
+		},
+		{
+			"eventType": "group",
+			"disabled": true,
+			"title": "SlowMotion",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Reduce the time scale while the touch is active, which will result in a slow motion effect."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Ball",
+							"sid": 353062472554407,
+							"parameters": {
+								"instance-variable": "canHit"
+							}
+						},
+						{
+							"id": "has-nth-touch",
+							"objectClass": "Touch",
+							"sid": 385664294566535,
+							"parameters": {
+								"touch-number": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 715411333082224,
+							"parameters": {
+								"time-scale": "0.1"
+							}
+						}
+					],
+					"sid": 229667387190039,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 802600305637101
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 281162431791800,
+							"parameters": {
+								"time-scale": "1"
+							}
+						}
+					],
+					"sid": 935998206189823,
+					"disabled": true
+				}
+			],
+			"sid": 594068316962518
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 682898314635644
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "variables",
+					"sid": 127417536106979,
+					"parameters": {
+						"instance-variable": "levelStrokes",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 839009149152761
+		}
+	],
+	"sid": 977528092617044
+}

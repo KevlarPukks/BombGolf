@@ -1,0 +1,56 @@
+{
+	"name": "resetCam",
+	"plugin-id": "Sprite",
+	"sid": 219533642944934,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "xOffset",
+			"type": "number",
+			"desc": "",
+			"sid": 371361011986791
+		},
+		{
+			"name": "yOffset",
+			"type": "number",
+			"desc": "",
+			"sid": 175527244037011
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "aaXe_FSM",
+			"name": "scroll",
+			"sid": 111652898165679
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 180,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3897848,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 921047200622757,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

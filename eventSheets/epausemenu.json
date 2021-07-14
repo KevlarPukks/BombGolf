@@ -1,0 +1,514 @@
+{
+	"name": "ePauseMenu",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 983053664221752
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "pauseMenuPanel",
+					"sid": 874838408182553,
+					"parameters": {
+						"x": "ViewportWidth(\"HUD\")/2",
+						"y": "ViewportHeight(\"HUD\")/2"
+					}
+				},
+				{
+					"id": "add-child",
+					"objectClass": "pauseMenuPanel",
+					"sid": 836772944314601,
+					"parameters": {
+						"child": "pauseMenuButton",
+						"transform-x": false,
+						"transform-y": false,
+						"transform-w": false,
+						"transform-h": false,
+						"transform-a": false,
+						"transform-z-elevation": false,
+						"destroy-with-parent": false
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "pauseButton",
+					"sid": 296088440210245,
+					"parameters": {
+						"instance-variable": "Variable1",
+						"value": "Self.FSM.CurrentState"
+					}
+				},
+				{
+					"id": "set-x",
+					"objectClass": "pauseMenuButton",
+					"sid": 227375294768991,
+					"disabled": true,
+					"parameters": {
+						"x": "pauseMenuPanel.X"
+					}
+				},
+				{
+					"id": "add-child",
+					"objectClass": "pauseMenuButton",
+					"sid": 678040593950758,
+					"parameters": {
+						"child": "Text",
+						"transform-x": false,
+						"transform-y": false,
+						"transform-w": true,
+						"transform-h": true,
+						"transform-a": true,
+						"transform-z-elevation": true,
+						"destroy-with-parent": false
+					}
+				}
+			],
+			"sid": 443713413509540
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Pause Button pressed ",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 143933892937335,
+							"parameters": {
+								"object": "pauseButton"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 616667076611273,
+							"disabled": true,
+							"parameters": {
+								"object-to-create": "Ball",
+								"layer": "\"world\"",
+								"x": "0",
+								"y": "0",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 287910800113962,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-current-state",
+									"objectClass": "pauseButton",
+									"sid": 158628218078330,
+									"behaviorType": "FSM",
+									"parameters": {
+										"name0": "\"pause\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 786294532668106
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 672572207091890
+								},
+								{
+									"id": "compare-current-state",
+									"objectClass": "pauseButton",
+									"sid": 535722888611944,
+									"disabled": true,
+									"behaviorType": "FSM",
+									"parameters": {
+										"name0": "\"unpaused\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "goto-state",
+									"objectClass": "pauseButton",
+									"sid": 558612341124141,
+									"behaviorType": "FSM",
+									"parameters": {
+										"name0": "\"pause\""
+									}
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 862061807831007,
+									"parameters": {
+										"time-scale": "0"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "pauseButton",
+									"sid": 273448791865543,
+									"parameters": {
+										"animation": "\"play\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "pauseMenuPanel",
+									"sid": 256999273561558,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "pauseMenuButton",
+									"sid": 477347190817124,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text",
+									"sid": 401455694907971,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "forestBg",
+									"sid": 303930701357405,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 669603881774219
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 648924909816924
+						}
+					]
+				}
+			],
+			"sid": 818212765869606
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Pause Menu Buttons",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-state-changed",
+							"objectClass": "pauseButton",
+							"sid": 395291071744192,
+							"behaviorType": "FSM"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "pauseButton",
+							"sid": 641809985340421,
+							"parameters": {
+								"instance-variable": "Variable1",
+								"value": "Self.FSM.CurrentState"
+							}
+						}
+					],
+					"sid": 401368444418765
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 640926087363712,
+							"parameters": {
+								"object": "pauseMenuButton"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "pauseMenuButton",
+							"sid": 533010626611041,
+							"parameters": {
+								"instance-variable": "name",
+								"comparison": 0,
+								"value": "\"restart course\""
+							}
+						},
+						{
+							"id": "compare-current-state",
+							"objectClass": "pauseButton",
+							"sid": 819698744678658,
+							"behaviorType": "FSM",
+							"parameters": {
+								"name0": "\"pause\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 919345213472396,
+							"parameters": {
+								"layout": "level14"
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 456022882610452,
+							"parameters": {
+								"time-scale": "1.0"
+							}
+						}
+					],
+					"sid": 499305560423417
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 567638191947631,
+							"parameters": {
+								"object": "pauseMenuButton"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "pauseMenuButton",
+							"sid": 694390959472559,
+							"parameters": {
+								"instance-variable": "name",
+								"comparison": 0,
+								"value": "\"restart hole\""
+							}
+						},
+						{
+							"id": "compare-current-state",
+							"objectClass": "pauseButton",
+							"sid": 527148070467839,
+							"behaviorType": "FSM",
+							"parameters": {
+								"name0": "\"pause\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 735114220817828
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 695539296987808,
+							"parameters": {
+								"time-scale": "1.0"
+							}
+						}
+					],
+					"sid": 900493221196960
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 648355843715318,
+							"parameters": {
+								"object": "pauseMenuButton"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "pauseMenuButton",
+							"sid": 985161123934869,
+							"parameters": {
+								"instance-variable": "name",
+								"comparison": 0,
+								"value": "\"title screen\""
+							}
+						},
+						{
+							"id": "compare-current-state",
+							"objectClass": "pauseButton",
+							"sid": 783049415897680,
+							"behaviorType": "FSM",
+							"parameters": {
+								"name0": "\"pause\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 346461479883634,
+							"parameters": {
+								"layout": "title"
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 842889442986124,
+							"parameters": {
+								"time-scale": "1.0"
+							}
+						}
+					],
+					"sid": 360958340561226
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 778024292301568,
+							"parameters": {
+								"object": "pauseMenuButton"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "pauseMenuButton",
+							"sid": 265121221347894,
+							"parameters": {
+								"instance-variable": "name",
+								"comparison": 0,
+								"value": "\"resume\""
+							}
+						},
+						{
+							"id": "compare-current-state",
+							"objectClass": "pauseButton",
+							"sid": 659382300281291,
+							"behaviorType": "FSM",
+							"parameters": {
+								"name0": "\"pause\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "goto-state",
+							"objectClass": "pauseButton",
+							"sid": 388230328091364,
+							"behaviorType": "FSM",
+							"parameters": {
+								"name0": "\"unpaused\""
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 360545992189261,
+							"parameters": {
+								"time-scale": "1"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "pauseButton",
+							"sid": 411690471556150,
+							"parameters": {
+								"animation": "\"pause\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "pauseMenuPanel",
+							"sid": 807005372447864,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Text",
+							"sid": 503387581637296,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "forestBg",
+							"sid": 620937181619053,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 839130199235026,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-all",
+									"objectClass": "System",
+									"sid": 739719927062262,
+									"parameters": {
+										"object": "pauseMenuButton"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "pauseMenuButton",
+									"sid": 376712474657968,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 176114429685377
+						}
+					]
+				}
+			],
+			"sid": 929173861697340
+		}
+	],
+	"sid": 318627599654002
+}

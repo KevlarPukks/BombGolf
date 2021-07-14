@@ -1,0 +1,62 @@
+{
+	"name": "rightArrow",
+	"plugin-id": "Sprite",
+	"sid": 703356917778061,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "doubleSpeedTime",
+			"type": "number",
+			"desc": "",
+			"sid": 293753585361062
+		},
+		{
+			"name": "speeddx2",
+			"type": "number",
+			"desc": "",
+			"sid": 995667673344815
+		},
+		{
+			"name": "currentSpeed",
+			"type": "number",
+			"desc": "",
+			"sid": 120179119251359
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 875234251547622
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 125,
+						"height": 126,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4985738,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 805020397144365,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

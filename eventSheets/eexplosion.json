@@ -1,0 +1,34 @@
+{
+	"name": "eExplosion",
+	"events": [
+		{
+			"functionName": "BallExplode",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Ball",
+					"sid": 811013473708617,
+					"parameters": {
+						"object": "explosion",
+						"layer": "\"world\"",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"callFunction": "GlassBlockExplode",
+					"sid": 530752264668532
+				}
+			],
+			"sid": 281195909371469
+		}
+	],
+	"sid": 287993105154110
+}

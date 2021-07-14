@@ -1,0 +1,25 @@
+{
+	"name": "wickLight",
+	"plugin-id": "Particles",
+	"sid": 830759791897889,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "brightness",
+			"name": "Brightness"
+		}
+	],
+	"image": {
+		"width": 49,
+		"height": 49,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 2436513,
+		"useCollisionPoly": true
+	}
+}
