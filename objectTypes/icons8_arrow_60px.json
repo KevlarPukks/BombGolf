@@ -1,0 +1,49 @@
+{
+	"name": "icons8_arrow_60px",
+	"plugin-id": "Sprite",
+	"sid": 706166198615266,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 60,
+						"height": 60,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2901894,
+						"collisionPoly": {
+							"points": [
+								0,
+								1,
+								0,
+								0,
+								1,
+								0,
+								1,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 490066183159430,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

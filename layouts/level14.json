@@ -2333,6 +2333,35 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "icons8_arrow_60px",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 393,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 80,
+						"y": 40,
+						"width": 60,
+						"height": 60,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							0.8352941176470589,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 567656540828550,

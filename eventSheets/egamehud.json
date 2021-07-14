@@ -300,6 +300,56 @@
 			],
 			"sid": 966333179558881,
 			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-outside-layout",
+					"objectClass": "Ball",
+					"sid": 492957611484089
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "icons8_arrow_60px",
+					"sid": 150610627106103,
+					"parameters": {
+						"x": "Ball.X"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "icons8_arrow_60px",
+					"sid": 937866268082449,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 314796076246119
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 303873307458500
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "icons8_arrow_60px",
+					"sid": 436617787657666,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 719508115080625
 		}
 	],
 	"sid": 114140407067873

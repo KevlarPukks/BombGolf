@@ -259,7 +259,8 @@
 							"CurrentLevel",
 							"pauseButton",
 							"pauseMenuPanel",
-							"pauseMenuButton"
+							"pauseMenuButton",
+							"icons8_arrow_60px"
 						],
 						"subfolders": [],
 						"name": "game"
