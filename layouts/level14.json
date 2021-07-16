@@ -200,10 +200,10 @@
 						}
 					},
 					"world": {
-						"x": 2585.845782684228,
-						"y": -17.982045390101348,
+						"x": 2584,
+						"y": 0,
 						"width": 5172.477127262417,
-						"height": 36.835560675962256,
+						"height": 5,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -2335,7 +2335,7 @@
 					}
 				},
 				{
-					"type": "icons8_arrow_60px",
+					"type": "hudArrow",
 					"properties": {
 						"initially-visible": false,
 						"initial-animation": "Default",
@@ -2344,8 +2344,25 @@
 						"live-preview": false
 					},
 					"uid": 393,
-					"instanceVariables": {},
-					"behaviors": {},
+					"instanceVariables": {
+						"name": "offScreen"
+					},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "window-left",
+								"top-edge": "window-top",
+								"right-edge": "none",
+								"bottom-edge": "none",
+								"enabled": true
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 80,
 						"y": 40,
@@ -2354,8 +2371,111 @@
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "dragAnywhereText",
+					"properties": {
+						"text": "Drag Anywhere to hit bomb",
+						"enable-bbcode": true,
+						"font": "LuckiestGuy-Regular",
+						"size": 22.200000000000028,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": false,
+						"origin": "center"
+					},
+					"uid": 394,
+					"instanceVariables": {},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "window-left",
+								"top-edge": "window-top",
+								"right-edge": "none",
+								"bottom-edge": "none",
+								"enabled": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 280,
+						"y": -144,
+						"width": 416,
+						"height": 56,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
 							1,
-							0.8352941176470589,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "hudArrow",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 395,
+					"instanceVariables": {
+						"name": "resetCamera"
+					},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "window-left",
+								"top-edge": "window-top",
+								"right-edge": "none",
+								"bottom-edge": "none",
+								"enabled": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 80,
+						"y": 104,
+						"width": 60,
+						"height": 60,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0,
+							0,
 							0,
 							1
 						],

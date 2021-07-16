@@ -224,6 +224,14 @@
 								"instance-variable": "touchStarted",
 								"value": "true"
 							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "dragAnywhereText",
+							"sid": 280105726370511,
+							"parameters": {
+								"visibility": "invisible"
+							}
 						}
 					],
 					"sid": 167448573506348
@@ -1158,6 +1166,33 @@
 				}
 			],
 			"sid": 544106163603121
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Ball",
+					"sid": 850895243905826,
+					"parameters": {
+						"object": "ceilingCollisions3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Ball",
+					"sid": 503648862309298,
+					"parameters": {
+						"object": "Particles",
+						"layer": "\"effects\"",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				}
+			],
+			"sid": 752397890972394
 		}
 	],
 	"sid": 924502142333177

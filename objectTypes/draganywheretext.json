@@ -1,0 +1,20 @@
+{
+	"name": "dragAnywhereText",
+	"plugin-id": "Text",
+	"sid": 562613695515519,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Anchor",
+			"sid": 121412270582506
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 845504668754566
+		}
+	],
+	"effectTypes": []
+}

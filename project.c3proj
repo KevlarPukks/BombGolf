@@ -136,6 +136,14 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Fade",
 			"name": "Fade",
 			"author": "Scirra",
@@ -171,7 +179,9 @@
 			"levelScore",
 			"floorcollisionParticle",
 			"Sprite",
-			"powergauge"
+			"powergauge",
+			"dragAnywhereText",
+			"Particles"
 		],
 		"subfolders": [
 			{
@@ -260,7 +270,7 @@
 							"pauseButton",
 							"pauseMenuPanel",
 							"pauseMenuButton",
-							"icons8_arrow_60px"
+							"hudArrow"
 						],
 						"subfolders": [],
 						"name": "game"

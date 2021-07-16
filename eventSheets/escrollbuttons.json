@@ -147,6 +147,14 @@
 							"parameters": {
 								"x": "scrollx+currentScrollSpeed*dt*rightArrow.speeddx2"
 							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "rightArrow",
+							"sid": 480370599033621,
+							"parameters": {
+								"scale": "0.8"
+							}
 						}
 					],
 					"sid": 910218261997136
@@ -177,6 +185,14 @@
 							"parameters": {
 								"instance-variable": "speeddx2",
 								"value": "1"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "rightArrow",
+							"sid": 168718118463088,
+							"parameters": {
+								"scale": "1"
 							}
 						}
 					],
@@ -300,6 +316,14 @@
 							"parameters": {
 								"x": "scrollx-scrollSpeed*dt*leftArrow.speedx2"
 							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "leftArrow",
+							"sid": 882839297084358,
+							"parameters": {
+								"scale": "0.8"
+							}
 						}
 					],
 					"sid": 179879088147452
@@ -330,6 +354,14 @@
 							"parameters": {
 								"instance-variable": "speedx2",
 								"value": "1"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "leftArrow",
+							"sid": 562494322869176,
+							"parameters": {
+								"scale": "1"
 							}
 						}
 					],
@@ -588,6 +620,14 @@
 					"parameters": {
 						"collisions": "enabled"
 					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "dragAnywhereText",
+					"sid": 583347433087993,
+					"parameters": {
+						"visibility": "invisible"
+					}
 				}
 			],
 			"sid": 103520260318981
@@ -620,6 +660,14 @@
 					"sid": 472041731546499,
 					"parameters": {
 						"collisions": "disabled"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "dragAnywhereText",
+					"sid": 674822077688168,
+					"parameters": {
+						"visibility": "visible"
 					}
 				}
 			],

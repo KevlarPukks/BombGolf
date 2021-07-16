@@ -1,10 +1,28 @@
 {
-	"name": "icons8_arrow_60px",
+	"name": "hudArrow",
 	"plugin-id": "Sprite",
 	"sid": 706166198615266,
 	"isGlobal": false,
-	"instanceVariables": [],
-	"behaviorTypes": [],
+	"instanceVariables": [
+		{
+			"name": "name",
+			"type": "string",
+			"desc": "",
+			"sid": 799980741915702
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Anchor",
+			"sid": 556196091872998
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 646849536244336
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [

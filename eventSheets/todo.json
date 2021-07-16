@@ -235,8 +235,8 @@
 				1
 			],
 			"background-color": [
-				1,
-				0,
+				0.047058823529411764,
+				0.4196078431372549,
 				0,
 				1
 			]
@@ -308,22 +308,6 @@
 		{
 			"eventType": "comment",
 			"text": "add title animation",
-			"text-color": [
-				1,
-				1,
-				1,
-				1
-			],
-			"background-color": [
-				1,
-				0,
-				0,
-				1
-			]
-		},
-		{
-			"eventType": "comment",
-			"text": "add stroke text flash",
 			"text-color": [
 				1,
 				1,

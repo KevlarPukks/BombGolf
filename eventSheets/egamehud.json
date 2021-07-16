@@ -66,6 +66,40 @@
 					"parameters": {
 						"text": "\"Hole\"&newline&variables.level"
 					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "dragAnywhereText",
+					"sid": 942332686118762,
+					"parameters": {
+						"x": "ViewportWidth(\"HUD\")/2",
+						"y": "ViewportHeight(\"HUD\")/2"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "dragAnywhereText",
+					"sid": 978626749898631,
+					"behaviorType": "Anchor",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "dragAnywhereText",
+					"sid": 836828481043193,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "0",
+						"time": "1",
+						"ease": "easeincubic",
+						"destroy-on-complete": "no",
+						"loop": "yes",
+						"ping-pong": "yes"
+					}
 				}
 			],
 			"sid": 852775233467377
@@ -116,6 +150,14 @@
 				{
 					"callFunction": "GameScoresVisible",
 					"sid": 886167331729262
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "dragAnywhereText",
+					"sid": 506897442850781,
+					"parameters": {
+						"visibility": "visible"
+					}
 				}
 			],
 			"sid": 752829706219801
@@ -308,12 +350,22 @@
 					"id": "is-outside-layout",
 					"objectClass": "Ball",
 					"sid": 492957611484089
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "hudArrow",
+					"sid": 296121758680810,
+					"parameters": {
+						"instance-variable": "name",
+						"comparison": 0,
+						"value": "\"offScreen\""
+					}
 				}
 			],
 			"actions": [
 				{
 					"id": "set-x",
-					"objectClass": "icons8_arrow_60px",
+					"objectClass": "hudArrow",
 					"sid": 150610627106103,
 					"parameters": {
 						"x": "Ball.X"
@@ -321,7 +373,7 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "icons8_arrow_60px",
+					"objectClass": "hudArrow",
 					"sid": 937866268082449,
 					"parameters": {
 						"visibility": "visible"
@@ -337,12 +389,22 @@
 					"id": "else",
 					"objectClass": "System",
 					"sid": 303873307458500
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "hudArrow",
+					"sid": 916538371056812,
+					"parameters": {
+						"instance-variable": "name",
+						"comparison": 0,
+						"value": "\"offScreen\""
+					}
 				}
 			],
 			"actions": [
 				{
 					"id": "set-visible",
-					"objectClass": "icons8_arrow_60px",
+					"objectClass": "hudArrow",
 					"sid": 436617787657666,
 					"parameters": {
 						"visibility": "invisible"
@@ -350,6 +412,162 @@
 				}
 			],
 			"sid": 719508115080625
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-enter",
+					"objectClass": "resetCam",
+					"sid": 654698801603103,
+					"behaviorType": "scroll",
+					"parameters": {
+						"name0": "\"disabled\""
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "hudArrow",
+					"sid": 189473197448489,
+					"parameters": {
+						"instance-variable": "name",
+						"comparison": 0,
+						"value": "\"resetCamera\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "hudArrow",
+					"sid": 999962251900415,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 286553279140493
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-enter",
+					"objectClass": "resetCam",
+					"sid": 932701207835484,
+					"behaviorType": "scroll",
+					"parameters": {
+						"name0": "\"follow ball\""
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "hudArrow",
+					"sid": 956659181804154,
+					"parameters": {
+						"instance-variable": "name",
+						"comparison": 0,
+						"value": "\"resetCamera\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "hudArrow",
+					"sid": 608286277704969,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 652990396165527
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 861123268565982
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "hudArrow",
+					"sid": 982792082853891,
+					"parameters": {
+						"instance-variable": "name",
+						"comparison": 0,
+						"value": "\"resetCamera\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "tween-one-property",
+					"objectClass": "hudArrow",
+					"sid": 770962574484530,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetY",
+						"end-value": "hudArrow.Y + 10",
+						"time": "1",
+						"ease": "easeinexpo",
+						"destroy-on-complete": "no",
+						"loop": "yes",
+						"ping-pong": "yes"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "hudArrow",
+					"sid": 416545345017348,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "0",
+						"time": "0.5",
+						"ease": "easeincubic",
+						"destroy-on-complete": "no",
+						"loop": "yes",
+						"ping-pong": "yes"
+					}
+				}
+			],
+			"sid": 820163539182990
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 266612194882016
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "hudArrow",
+					"sid": 872100201471756,
+					"parameters": {
+						"instance-variable": "name",
+						"comparison": 0,
+						"value": "\"resetCamera\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "hudArrow",
+					"sid": 670988048379992,
+					"parameters": {
+						"x": "ViewportLeft(\"HUD\")+80"
+					}
+				}
+			],
+			"sid": 587664807077574
 		}
 	],
 	"sid": 114140407067873
