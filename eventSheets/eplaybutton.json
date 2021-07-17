@@ -36,15 +36,64 @@
 			],
 			"actions": [
 				{
+					"id": "set-scale",
+					"objectClass": "play",
+					"sid": 175754498777251,
+					"disabled": true,
+					"parameters": {
+						"scale": "0.7"
+					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "play",
+					"sid": 799628092115897,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "scale",
+						"end-x": "00.8",
+						"end-y": "0.8",
+						"time": "0.1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "yes"
+					}
+				}
+			],
+			"sid": 895042761641112
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [],
+			"sid": 702738754915700
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tweens-finished",
+					"objectClass": "play",
+					"sid": 641491605852305,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\""
+					}
+				}
+			],
+			"actions": [
+				{
 					"id": "go-to-nextprevious-layout",
 					"objectClass": "System",
-					"sid": 740032361311322,
+					"sid": 954882192787573,
 					"parameters": {
 						"which": "next"
 					}
 				}
 			],
-			"sid": 895042761641112
+			"sid": 162552423957513
 		}
 	],
 	"sid": 808110819147791

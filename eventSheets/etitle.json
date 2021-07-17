@@ -48,6 +48,23 @@
 						"instance-variable": "level",
 						"value": "0"
 					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "title",
+					"sid": 861401105461566,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "scale",
+						"end-x": "01.2",
+						"end-y": "1.2",
+						"time": "3",
+						"ease": "easeinoutquart",
+						"destroy-on-complete": "no",
+						"loop": "yes",
+						"ping-pong": "yes"
+					}
 				}
 			],
 			"sid": 318370752124354

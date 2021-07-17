@@ -28,7 +28,7 @@
 				{
 					"id": "on-touched-object",
 					"objectClass": "Touch",
-					"sid": 672237761141026,
+					"sid": 826067435885283,
 					"parameters": {
 						"object": "play"
 					}
@@ -36,15 +36,64 @@
 			],
 			"actions": [
 				{
+					"id": "set-scale",
+					"objectClass": "play",
+					"sid": 563064248009673,
+					"disabled": true,
+					"parameters": {
+						"scale": "0.7"
+					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "play",
+					"sid": 690361453240115,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "scale",
+						"end-x": "00.8",
+						"end-y": "0.8",
+						"time": "0.1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "yes"
+					}
+				}
+			],
+			"sid": 673409350778206
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [],
+			"sid": 503504055502999
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tweens-finished",
+					"objectClass": "play",
+					"sid": 508932733785227,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\""
+					}
+				}
+			],
+			"actions": [
+				{
 					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 799856537760571,
+					"sid": 675132343701867,
 					"parameters": {
 						"layout": "title"
 					}
 				}
 			],
-			"sid": 640818798795643
+			"sid": 109284892614875
 		}
 	],
 	"sid": 722851545318484

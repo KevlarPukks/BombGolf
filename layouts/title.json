@@ -56,7 +56,16 @@
 					},
 					"uid": 354,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 443,
 						"y": 306,
@@ -167,7 +176,13 @@
 					},
 					"uid": 355,
 					"instanceVariables": {},
-					"behaviors": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 432,
 						"y": 109,

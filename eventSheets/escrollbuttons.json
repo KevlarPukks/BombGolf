@@ -470,25 +470,31 @@
 					],
 					"actions": [
 						{
-							"id": "set-enabled",
-							"objectClass": "Ball",
-							"sid": 914901279565237,
-							"behaviorType": "ScrollTo",
-							"parameters": {
-								"state": "enabled"
-							}
-						},
-						{
 							"id": "goto-state",
 							"objectClass": "resetCam",
-							"sid": 397919385220021,
+							"sid": 978678023153952,
 							"behaviorType": "scroll",
 							"parameters": {
 								"name0": "\"follow ball\""
 							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Ball",
+							"sid": 518731368291796,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"state": "enabled"
+							}
 						}
 					],
 					"sid": 376624220253322
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 594264292489941
 				}
 			],
 			"sid": 178591032311533

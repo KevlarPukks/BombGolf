@@ -22,6 +22,23 @@
 					"parameters": {
 						"x": "ViewportWidth(0)/2"
 					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "title",
+					"sid": 814674441040442,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "scale",
+						"end-x": "01.2",
+						"end-y": "1.2",
+						"time": "3",
+						"ease": "easeinoutquart",
+						"destroy-on-complete": "no",
+						"loop": "yes",
+						"ping-pong": "yes"
+					}
 				}
 			],
 			"sid": 317813432442663

@@ -103,6 +103,28 @@
 						{
 							"callFunction": "BallExplode",
 							"sid": 871726289264773
+						},
+						{
+							"id": "flash",
+							"objectClass": "explodeButton",
+							"sid": 841159732865473,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.05",
+								"off-time": "0.05",
+								"duration": "0.1"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "exploddeText",
+							"sid": 222253516556936,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.05",
+								"off-time": "0.05",
+								"duration": "0.1"
+							}
 						}
 					],
 					"sid": 515407608990795

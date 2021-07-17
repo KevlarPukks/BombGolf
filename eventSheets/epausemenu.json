@@ -153,11 +153,20 @@
 									}
 								},
 								{
-									"id": "set-time-scale",
-									"objectClass": "System",
-									"sid": 862061807831007,
+									"id": "tween-two-properties",
+									"objectClass": "pauseButton",
+									"sid": 232501131539400,
+									"behaviorType": "Tween",
 									"parameters": {
-										"time-scale": "0"
+										"tags": "\"\"",
+										"property": "scale",
+										"end-x": "00.8",
+										"end-y": "0.8",
+										"time": "0.1",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "yes"
 									}
 								},
 								{
@@ -167,38 +176,6 @@
 									"parameters": {
 										"animation": "\"play\"",
 										"from": "beginning"
-									}
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "pauseMenuPanel",
-									"sid": 256999273561558,
-									"parameters": {
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "pauseMenuButton",
-									"sid": 477347190817124,
-									"parameters": {
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "Text",
-									"sid": 401455694907971,
-									"parameters": {
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "forestBg",
-									"sid": 303930701357405,
-									"parameters": {
-										"visibility": "visible"
 									}
 								}
 							],
@@ -211,6 +188,63 @@
 							"sid": 648924909816924
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "pauseButton",
+							"sid": 241717471399534,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 980896087566112,
+							"parameters": {
+								"time-scale": "0"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "forestBg",
+							"sid": 596888499506725,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Text",
+							"sid": 634376662188015,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "pauseMenuPanel",
+							"sid": 917494272791128,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "pauseMenuButton",
+							"sid": 296088654608321,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 447695570456724
 				}
 			],
 			"sid": 818212765869606

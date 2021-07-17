@@ -9,6 +9,11 @@
 			"behaviorId": "Anchor",
 			"name": "Anchor",
 			"sid": 955979778705433
+		},
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 591860529685318
 		}
 	],
 	"effectTypes": []
