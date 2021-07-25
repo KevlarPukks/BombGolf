@@ -522,6 +522,17 @@
 							"parameters": {
 								"angle": "debug_distance"
 							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 656848312584410,
+							"parameters": {
+								"audio-file": "Golf Ball Hit 2_2",
+								"loop": "not-looping",
+								"volume": "30",
+								"tag-optional": "\"\""
+							}
 						}
 					],
 					"sid": 144876632718965,
@@ -867,6 +878,17 @@
 						"y": "Ball.Physics.ContactYAt(0)",
 						"create-hierarchy": false
 					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 947278221101629,
+					"parameters": {
+						"audio-file": "Ball Drop 06",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
 				}
 			],
 			"sid": 378613345866545
@@ -986,6 +1008,17 @@
 					"behaviorType": "Physics",
 					"parameters": {
 						"setting": "immovable"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 559909840437579,
+					"parameters": {
+						"audio-file": "Golf Ball Hole 4_2",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
 					}
 				}
 			],
@@ -1190,9 +1223,47 @@
 						"image-point": "0",
 						"create-hierarchy": false
 					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 816821720766897,
+					"parameters": {
+						"audio-file": "whoosh_weapon_spin_01",
+						"loop": "not-looping",
+						"volume": "0-7",
+						"tag-optional": "\"\""
+					}
 				}
 			],
 			"sid": 752397890972394
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Ball",
+					"sid": 434027595461520,
+					"parameters": {
+						"object": "wallCollisions2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 192759208189462,
+					"parameters": {
+						"audio-file": "Ball Drop 01",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 159866914859781
 		}
 	],
 	"sid": 924502142333177

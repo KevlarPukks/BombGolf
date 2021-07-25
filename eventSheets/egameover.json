@@ -39,6 +39,25 @@
 						"loop": "yes",
 						"ping-pong": "yes"
 					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 785923572924918,
+					"parameters": {
+						"tag": "\"music\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 347593286296507,
+					"parameters": {
+						"audio-file": "Banjo LOOP",
+						"loop": "looping",
+						"volume": "0",
+						"tag-optional": "\"music\""
+					}
 				}
 			],
 			"sid": 317813432442663

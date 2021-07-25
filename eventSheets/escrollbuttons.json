@@ -274,6 +274,17 @@
 							"parameters": {
 								"name0": "\"disabled\""
 							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 550953938731597,
+							"parameters": {
+								"audio-file": "Click (20)",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
 						}
 					],
 					"sid": 446523754027778
@@ -443,6 +454,17 @@
 							"parameters": {
 								"name0": "\"disabled\""
 							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 236269650911518,
+							"parameters": {
+								"audio-file": "Click (20)",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
 						}
 					],
 					"sid": 223087075721893
@@ -485,6 +507,17 @@
 							"behaviorType": "ScrollTo",
 							"parameters": {
 								"state": "enabled"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 952293091401864,
+							"parameters": {
+								"audio-file": "Click (11)",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
 							}
 						}
 					],

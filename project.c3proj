@@ -48,6 +48,14 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Text",
 			"name": "Text",
 			"author": "Scirra",
@@ -240,7 +248,8 @@
 			{
 				"items": [
 					"Mouse",
-					"Touch"
+					"Touch",
+					"Audio"
 				],
 				"subfolders": [],
 				"name": "system"
@@ -436,11 +445,73 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "Ball Drop 06.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 892598349353312
+				},
+				{
+					"name": "Golf Ball Hit 2_2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 258204311468525
+				},
+				{
+					"name": "Golf Ball Hole 3_1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 406275013115752
+				},
+				{
+					"name": "Ball Drop 01.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 641003945572799
+				},
+				{
+					"name": "Click (20).webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 957593029202950
+				},
+				{
+					"name": "Click (11).webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 214304412733794
+				},
+				{
+					"name": "explosion_large_no_tail_06.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 889489941266927
+				},
+				{
+					"name": "Golf Ball Hole 4_2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 579121528917028
+				},
+				{
+					"name": "whoosh_weapon_spin_01.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 262023809711006
+				}
+			],
 			"subfolders": []
 		},
 		"music": {
-			"items": [],
+			"items": [
+				{
+					"name": "Casual Level LOOP.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 856489780308753
+				},
+				{
+					"name": "Country Title.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 794140609157895
+				},
+				{
+					"name": "Banjo LOOP.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 783069019864548
+				}
+			],
 			"subfolders": []
 		},
 		"video": {

@@ -103,6 +103,17 @@
 								"y": "0",
 								"create-hierarchy": false
 							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 227698122209791,
+							"parameters": {
+								"audio-file": "Click (11)",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
 						}
 					],
 					"sid": 287910800113962,
@@ -326,6 +337,17 @@
 							"parameters": {
 								"time-scale": "1.0"
 							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 690218050330631,
+							"parameters": {
+								"audio-file": "Click (11)",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
 						}
 					],
 					"sid": 499305560423417
@@ -373,6 +395,17 @@
 							"sid": 695539296987808,
 							"parameters": {
 								"time-scale": "1.0"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 189477573400312,
+							"parameters": {
+								"audio-file": "Click (11)",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
 							}
 						}
 					],
@@ -424,6 +457,17 @@
 							"sid": 842889442986124,
 							"parameters": {
 								"time-scale": "1.0"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 624365455328857,
+							"parameters": {
+								"audio-file": "Click (11)",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
 							}
 						}
 					],
@@ -509,6 +553,17 @@
 							"sid": 620937181619053,
 							"parameters": {
 								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 499813778120482,
+							"parameters": {
+								"audio-file": "Click (11)",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
 							}
 						}
 					],

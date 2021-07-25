@@ -60,6 +60,17 @@
 						"loop": "no",
 						"ping-pong": "yes"
 					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 610953969236162,
+					"parameters": {
+						"audio-file": "Click (11)",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
 				}
 			],
 			"sid": 895042761641112

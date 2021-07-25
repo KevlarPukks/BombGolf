@@ -125,6 +125,17 @@
 								"off-time": "0.05",
 								"duration": "0.1"
 							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 419477015126417,
+							"parameters": {
+								"audio-file": "explosion_large_no_tail_06",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
 						}
 					],
 					"sid": 515407608990795
