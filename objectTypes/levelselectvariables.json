@@ -1,0 +1,14 @@
+{
+	"name": "LevelSelectVariables",
+	"plugin-id": "Arr",
+	"sid": 909961354620073,
+	"isGlobal": true,
+	"instanceVariables": [
+		{
+			"name": "CurrentLevelSelected",
+			"type": "number",
+			"desc": "",
+			"sid": 523002713615946
+		}
+	]
+}

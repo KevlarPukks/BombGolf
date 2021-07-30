@@ -1,0 +1,57 @@
+{
+	"name": "levelSelectPanel",
+	"plugin-id": "Sprite",
+	"sid": 867261290843572,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 720,
+						"height": 400,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9887340,
+						"collisionPoly": {
+							"points": [
+								0.04583333333333333,
+								0.0825,
+								0.5,
+								0.0575,
+								0.9527777777777777,
+								0.0825,
+								0.9652777777777778,
+								0.5,
+								0.9527777777777777,
+								0.915,
+								0.5,
+								0.94,
+								0.04583333333333333,
+								0.915,
+								0.03333333333333333,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 399994963286894,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

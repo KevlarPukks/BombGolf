@@ -197,7 +197,9 @@
 			"Sprite",
 			"powergauge",
 			"dragAnywhereText",
-			"Particles"
+			"Particles",
+			"LevelSelectVariables",
+			"LLevelSelectPlayButton"
 		],
 		"subfolders": [
 			{
@@ -308,6 +310,17 @@
 							}
 						],
 						"name": "title"
+					},
+					{
+						"items": [
+							"levelSelectPanel",
+							"LevelSelectButton",
+							"levelSelectTitlle",
+							"Sprite2",
+							"Text2"
+						],
+						"subfolders": [],
+						"name": "levelSelect"
 					}
 				],
 				"name": "HUD"
@@ -356,6 +369,13 @@
 				"LevelStrokesPanel"
 			],
 			"selectMode": "normal"
+		},
+		{
+			"members": [
+				"LevelSelectButton",
+				"Text2"
+			],
+			"selectMode": "normal"
 		}
 	],
 	"families": {
@@ -380,7 +400,8 @@
 			"ObjectRepository",
 			"level8",
 			"level9",
-			"level10"
+			"level10",
+			"LevelSelect"
 		],
 		"subfolders": [
 			{
@@ -402,7 +423,8 @@
 	"eventSheets": {
 		"items": [
 			"todo",
-			"eSplash"
+			"eSplash",
+			"eLevelSelect"
 		],
 		"subfolders": [
 			{

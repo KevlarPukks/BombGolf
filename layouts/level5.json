@@ -635,6 +635,9 @@
 								"bottom-edge": "none",
 								"enabled": true
 							}
+						},
+						"Flash": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -687,6 +690,9 @@
 								"bottom-edge": "none",
 								"enabled": true
 							}
+						},
+						"Flash": {
+							"properties": {}
 						}
 					},
 					"world": {

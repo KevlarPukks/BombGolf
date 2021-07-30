@@ -93,6 +93,18 @@
 			},
 			"uid": 375,
 			"instanceVariables": {}
+		},
+		{
+			"type": "LevelSelectVariables",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 414,
+			"instanceVariables": {
+				"CurrentLevelSelected": 0
+			}
 		}
 	],
 	"effectTypes": [],

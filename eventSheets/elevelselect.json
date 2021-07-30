@@ -1,0 +1,283 @@
+{
+	"name": "eLevelSelect",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Variable1",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 119209572782096
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 268252708744921,
+					"parameters": {
+						"object": "LevelSelectButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "Text2",
+					"sid": 416888664493753,
+					"parameters": {
+						"text": "LevelSelectButton.hole"
+					}
+				}
+			],
+			"sid": 821139825468374
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 670046871931755,
+					"parameters": {
+						"object": "LevelSelectButton"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "LevelSelectButton",
+					"sid": 168164307754338,
+					"parameters": {
+						"instance-variable": "locked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "LevelSelectButton",
+					"sid": 955365642462105,
+					"parameters": {
+						"animation": "\"disabled\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 189864326342614
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 201044225575144,
+					"parameters": {
+						"object": "LevelSelectButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "LevelSelectVariables",
+					"sid": 424963047303153,
+					"parameters": {
+						"instance-variable": "CurrentLevelSelected",
+						"value": "LevelSelectButton.hole"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 858152457084830,
+					"parameters": {
+						"audio-file": "Click (20)",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 644446400648096
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-end",
+					"objectClass": "Touch",
+					"sid": 770872815496183
+				}
+			],
+			"actions": [],
+			"sid": 448227433797947,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 145206550610691,
+							"parameters": {
+								"object": "LevelSelectButton"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 450969109225315,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "LevelSelectVariables",
+									"sid": 785025561095281,
+									"parameters": {
+										"instance-variable": "CurrentLevelSelected",
+										"comparison": 0,
+										"value": "LevelSelectButton.hole"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "LevelSelectButton",
+									"sid": 866188139766970,
+									"parameters": {
+										"color": "rgbEx(100, 0, 0)"
+									}
+								}
+							],
+							"sid": 781491270611356
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 366998499936455
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "LevelSelectButton",
+									"sid": 724281147293838,
+									"parameters": {
+										"color": "rgbEx(100,100, 100)"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 904945967002987,
+									"parameters": {
+										"variable": "Variable1",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 708292853708070
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 588945006428081
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 540709038177902,
+					"parameters": {
+						"object": "LevelSelectButton"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "LevelSelectButton",
+					"sid": 892280853102740,
+					"parameters": {
+						"instance-variable": "locked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "LLevelSelectPlayButton",
+					"sid": 261574851992668,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "LLevelSelectPlayButton",
+					"sid": 598919634341570,
+					"parameters": {
+						"collisions": "disabled"
+					}
+				}
+			],
+			"sid": 380885144104298
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 289499868610546,
+					"parameters": {
+						"object": "LevelSelectButton"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "LevelSelectButton",
+					"sid": 250979892822781,
+					"parameters": {
+						"instance-variable": "locked"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "LLevelSelectPlayButton",
+					"sid": 189805096567203,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "LLevelSelectPlayButton",
+					"sid": 468538806496481,
+					"parameters": {
+						"collisions": "enabled"
+					}
+				}
+			],
+			"sid": 847511899091037
+		}
+	],
+	"sid": 897053129484113
+}

@@ -1,0 +1,57 @@
+{
+	"name": "LLevelSelectPlayButton",
+	"plugin-id": "Sprite",
+	"sid": 418727625118254,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 125,
+						"height": 126,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 550149,
+						"collisionPoly": {
+							"points": [
+								0.0819234194122885,
+								0.057971014492753624,
+								0.5,
+								0.074354127284184,
+								0.6251113089937667,
+								0.2646502835538752,
+								0.553873552983081,
+								0.5,
+								0.5262689225289403,
+								0.6647763074984246,
+								0.5,
+								0.6647763074984246,
+								0.4728406055209261,
+								0.6647763074984246,
+								0.10774710596616206,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 312188335009121,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

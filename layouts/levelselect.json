@@ -1,0 +1,605 @@
+{
+	"name": "LevelSelect",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "forestBg",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0
+					},
+					"uid": 398,
+					"instanceVariables": {},
+					"behaviors": {
+						"Anchor": {
+							"properties": {
+								"left-edge": "window-left",
+								"top-edge": "window-top",
+								"right-edge": "none",
+								"bottom-edge": "none",
+								"enabled": false
+							}
+						}
+					},
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 854,
+						"height": 480,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "levelSelectPanel",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 399,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 427.881307938871,
+						"y": 240.72744931526105,
+						"width": 916.5445849890576,
+						"height": 542.9223411445873,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "LevelSelectButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "active",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 400,
+					"instanceVariables": {
+						"hole": 1,
+						"locked": false
+					},
+					"behaviors": {},
+					"world": {
+						"x": 176,
+						"y": 144,
+						"width": 96,
+						"height": 96,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "levelSelectTitlle",
+					"properties": {
+						"text": "Hole Select",
+						"enable-bbcode": true,
+						"font": "LuckiestGuy-Regular",
+						"size": 38.500000000000085,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.8313725490196079,
+							1,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 401,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 224.93704064074507,
+						"y": 34.01469949615773,
+						"width": 384,
+						"height": 64,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "LevelSelectButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "active",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 402,
+					"instanceVariables": {
+						"hole": 2,
+						"locked": false
+					},
+					"behaviors": {},
+					"world": {
+						"x": 304,
+						"y": 144,
+						"width": 96,
+						"height": 96,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "LevelSelectButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "active",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 403,
+					"instanceVariables": {
+						"hole": 3,
+						"locked": false
+					},
+					"behaviors": {},
+					"world": {
+						"x": 432,
+						"y": 144,
+						"width": 96,
+						"height": 96,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "LevelSelectButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "active",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 404,
+					"instanceVariables": {
+						"hole": 4,
+						"locked": false
+					},
+					"behaviors": {},
+					"world": {
+						"x": 560,
+						"y": 144,
+						"width": 96,
+						"height": 96,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "LevelSelectButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "active",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 405,
+					"instanceVariables": {
+						"hole": 5,
+						"locked": false
+					},
+					"behaviors": {},
+					"world": {
+						"x": 688,
+						"y": 144,
+						"width": 96,
+						"height": 96,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "LevelSelectButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "active",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 406,
+					"instanceVariables": {
+						"hole": 6,
+						"locked": true
+					},
+					"behaviors": {},
+					"world": {
+						"x": 176,
+						"y": 272,
+						"width": 96,
+						"height": 96,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "LevelSelectButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "active",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 407,
+					"instanceVariables": {
+						"hole": 7,
+						"locked": true
+					},
+					"behaviors": {},
+					"world": {
+						"x": 304,
+						"y": 272,
+						"width": 96,
+						"height": 96,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "LevelSelectButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "active",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 408,
+					"instanceVariables": {
+						"hole": 8,
+						"locked": true
+					},
+					"behaviors": {},
+					"world": {
+						"x": 432,
+						"y": 272,
+						"width": 96,
+						"height": 96,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "LevelSelectButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "active",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 409,
+					"instanceVariables": {
+						"hole": 9,
+						"locked": true
+					},
+					"behaviors": {},
+					"world": {
+						"x": 560,
+						"y": 272,
+						"width": 96,
+						"height": 96,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "LevelSelectButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "active",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 410,
+					"instanceVariables": {
+						"hole": 10,
+						"locked": true
+					},
+					"behaviors": {},
+					"world": {
+						"x": 688,
+						"y": 272,
+						"width": 96,
+						"height": 96,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite2",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "right",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 411,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 768,
+						"y": 384,
+						"width": 125,
+						"height": 126,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite2",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "left",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 412,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 80,
+						"y": 384,
+						"width": 125,
+						"height": 125,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text2",
+					"properties": {
+						"text": "99",
+						"enable-bbcode": true,
+						"font": "LuckiestGuy-Regular",
+						"size": 43.900000000000084,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center"
+					},
+					"uid": 413,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 177.69414135825224,
+						"y": 143.03426851670653,
+						"width": 92.83851110030288,
+						"height": 69.30774814757447,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "LLevelSelectPlayButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 415,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 412.2255862473181,
+						"y": 391.12793123659065,
+						"width": 125,
+						"height": 126,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 104606020008067,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		}
+	],
+	"sid": 256273546877322,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 854,
+	"height": 480,
+	"unboundedScrolling": false,
+	"eventSheet": "eLevelSelect"
+}
