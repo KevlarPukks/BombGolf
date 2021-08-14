@@ -56,6 +56,22 @@
 		},
 		{
 			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Text",
 			"name": "Text",
 			"author": "Scirra",
@@ -82,6 +98,22 @@
 			"type": "plugin",
 			"id": "Arr",
 			"name": "Array",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Dictionary",
+			"name": "Dictionary",
+			"author": "Scirra",
+			"version": "r251.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Json",
+			"name": "JSON",
 			"author": "Scirra",
 			"version": "r251.2",
 			"bundled": false
@@ -191,15 +223,20 @@
 			"distA",
 			"distB",
 			"Array",
-			"variables",
 			"levelScore",
 			"floorcollisionParticle",
 			"Sprite",
 			"powergauge",
 			"dragAnywhereText",
 			"Particles",
-			"LevelSelectVariables",
-			"LLevelSelectPlayButton"
+			"LLevelSelectPlayButton",
+			"Sprite3",
+			"StarsCollectedText",
+			"starsNeeededText",
+			"parText",
+			"holeStrokes",
+			"holesData",
+			"levelSelectDict"
 		],
 		"subfolders": [
 			{
@@ -251,7 +288,9 @@
 				"items": [
 					"Mouse",
 					"Touch",
-					"Audio"
+					"Audio",
+					"AJAX",
+					"LocalStorage"
 				],
 				"subfolders": [],
 				"name": "system"
@@ -317,7 +356,7 @@
 							"LevelSelectButton",
 							"levelSelectTitlle",
 							"Sprite2",
-							"Text2"
+							"levelSelectNumberText"
 						],
 						"subfolders": [],
 						"name": "levelSelect"
@@ -373,7 +412,9 @@
 		{
 			"members": [
 				"LevelSelectButton",
-				"Text2"
+				"levelSelectDict",
+				"levelSelectNumberText",
+				"parText"
 			],
 			"selectMode": "normal"
 		}
@@ -400,14 +441,14 @@
 			"ObjectRepository",
 			"level8",
 			"level9",
-			"level10",
-			"LevelSelect"
+			"level10"
 		],
 		"subfolders": [
 			{
 				"items": [
 					"splash",
 					"title",
+					"LevelSelect",
 					"level14",
 					"level13_hill",
 					"level11",
@@ -651,6 +692,11 @@
 					"name": "scrollSpeed.json",
 					"type": "application/json",
 					"sid": 160723517645681
+				},
+				{
+					"name": "holes.json",
+					"type": "application/json",
+					"sid": 410047938948047
 				}
 			],
 			"subfolders": []

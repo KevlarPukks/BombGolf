@@ -38,33 +38,15 @@
 					}
 				},
 				{
-					"id": "set-instvar-value",
-					"objectClass": "variables",
-					"sid": 759509845292378,
-					"parameters": {
-						"instance-variable": "levelStrokes",
-						"value": "0"
-					}
-				},
-				{
 					"callFunction": "SetStrokesText",
 					"sid": 311729419446673
 				},
 				{
-					"id": "add-to-instvar",
-					"objectClass": "variables",
-					"sid": 398704143546081,
-					"parameters": {
-						"instance-variable": "level",
-						"value": "1"
-					}
-				},
-				{
 					"id": "set-text",
 					"objectClass": "CurrentLevel",
-					"sid": 233993792214094,
+					"sid": 836067274173216,
 					"parameters": {
-						"text": "\"Hole\"&newline&variables.level"
+						"text": "\"Hole\"&newline&currentHole"
 					}
 				},
 				{
@@ -100,6 +82,14 @@
 						"loop": "yes",
 						"ping-pong": "yes"
 					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "LevelStrokes",
+					"sid": 424140050995613,
+					"parameters": {
+						"text": "\"Strokes\"&newline&currentStrokes"
+					}
 				}
 			],
 			"sid": 852775233467377
@@ -117,17 +107,17 @@
 				{
 					"id": "set-text",
 					"objectClass": "LevelStrokes",
-					"sid": 254559041064343,
+					"sid": 147160954314711,
 					"parameters": {
-						"text": "\"Hole\"&newline&\"Strokes\"&newline&variables.levelStrokes"
+						"text": "\"Strokes\"&newline&currentStrokes"
 					}
 				},
 				{
 					"id": "set-text",
 					"objectClass": "GameStrokes",
-					"sid": 374564890183727,
+					"sid": 908469130127029,
 					"parameters": {
-						"text": "\"Course\"&newline&\"Strokes\"&newline&variables.gameStrokes"
+						"text": "\"Par\"&newline&currentPar"
 					}
 				}
 			],

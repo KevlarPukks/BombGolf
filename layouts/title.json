@@ -199,39 +199,6 @@
 						"angle": 0,
 						"zElevation": 0
 					}
-				},
-				{
-					"type": "variables",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": false,
-						"live-preview": false
-					},
-					"uid": 368,
-					"instanceVariables": {
-						"gameStrokes": 0,
-						"levelStrokes": 0,
-						"level": 0
-					},
-					"behaviors": {},
-					"world": {
-						"x": 870,
-						"y": -146,
-						"width": 250,
-						"height": 250,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
 				}
 			],
 			"sid": 918116036013973,

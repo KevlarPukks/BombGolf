@@ -39,16 +39,6 @@
 								"type": "once",
 								"tag": "\"\""
 							}
-						},
-						{
-							"id": "insert",
-							"objectClass": "levelScore",
-							"sid": 277033552084768,
-							"parameters": {
-								"value": "variables.levelStrokes",
-								"index": "variables.level",
-								"axis": "x"
-							}
 						}
 					],
 					"sid": 809980952167493,
@@ -123,11 +113,11 @@
 			],
 			"actions": [
 				{
-					"id": "go-to-nextprevious-layout",
+					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 429557456422585,
+					"sid": 855969463807948,
 					"parameters": {
-						"which": "next"
+						"layout": "LevelSelect"
 					}
 				}
 			],

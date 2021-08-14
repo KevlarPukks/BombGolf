@@ -1,0 +1,54 @@
+{
+"holes":[
+	{
+		"hole":1,
+"completed":false,
+		"locked":false
+	},
+		{
+			"hole":2,
+"completed":false,
+		"locked":false
+	},
+		{
+			"hole":3,
+"completed":false,
+		"locked":false
+	},
+		{
+			"hole":4,
+"completed":false,
+		"locked":false
+	},
+		{
+			"hole":5,
+"completed":false,
+		"locked":false
+	},
+		{
+			"hole":6,
+"completed":false,
+		"locked":true
+	},
+		{
+			"hole":7,
+"completed":false,
+		"locked":true
+	},
+		{
+			"hole":8,
+"completed":false,
+		"locked":true
+	},
+		{
+			"hole":9,
+"completed":false,
+		"locked":true
+	},
+		{
+			"hole":10,
+"completed":false,
+		"locked":true
+	}
+]
+}

@@ -15,9 +15,33 @@
 			"type": "boolean",
 			"desc": "",
 			"sid": 869694491474175
+		},
+		{
+			"name": "holeComplete",
+			"type": "boolean",
+			"desc": "",
+			"sid": 897290911771128
+		},
+		{
+			"name": "par",
+			"type": "number",
+			"desc": "",
+			"sid": 793702937662303
+		},
+		{
+			"name": "starsToUnlock",
+			"type": "number",
+			"desc": "",
+			"sid": 424558053151938
 		}
 	],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 578232072735885
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [

@@ -32,24 +32,6 @@
 					}
 				},
 				{
-					"id": "set-instvar-value",
-					"objectClass": "variables",
-					"sid": 215083961989631,
-					"parameters": {
-						"instance-variable": "gameStrokes",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "variables",
-					"sid": 759069815755860,
-					"parameters": {
-						"instance-variable": "level",
-						"value": "0"
-					}
-				},
-				{
 					"id": "tween-two-properties",
 					"objectClass": "title",
 					"sid": 861401105461566,
@@ -84,41 +66,18 @@
 						"volume": "0",
 						"tag-optional": "\"music\""
 					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 416573015649587,
+					"parameters": {
+						"variable": "lastLayout",
+						"value": "\"title\""
+					}
 				}
 			],
 			"sid": 318370752124354
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-end-of-layout",
-					"objectClass": "System",
-					"sid": 191916322761933
-				}
-			],
-			"actions": [
-				{
-					"id": "stop",
-					"objectClass": "Audio",
-					"sid": 956199133109867,
-					"parameters": {
-						"tag": "\"music\""
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 112531185114759,
-					"parameters": {
-						"audio-file": "Casual Level LOOP",
-						"loop": "looping",
-						"volume": "-5",
-						"tag-optional": "\"music\""
-					}
-				}
-			],
-			"sid": 482258750956858
 		}
 	],
 	"sid": 823690587310247

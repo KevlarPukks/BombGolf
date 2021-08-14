@@ -95,16 +95,22 @@
 			"instanceVariables": {}
 		},
 		{
-			"type": "LevelSelectVariables",
-			"properties": {
-				"width": 10,
-				"height": 1,
-				"depth": 1
-			},
-			"uid": 414,
-			"instanceVariables": {
-				"CurrentLevelSelected": 0
-			}
+			"type": "holeStrokes",
+			"properties": {},
+			"uid": 429,
+			"instanceVariables": {}
+		},
+		{
+			"type": "holesData",
+			"properties": {},
+			"uid": 430,
+			"instanceVariables": {}
+		},
+		{
+			"type": "levelSelectDict",
+			"properties": {},
+			"uid": 368,
+			"instanceVariables": {}
 		}
 	],
 	"effectTypes": [],

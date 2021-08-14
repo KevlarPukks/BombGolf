@@ -22,6 +22,66 @@
 			"sid": 841016441643403
 		},
 		{
+			"eventType": "variable",
+			"name": "currentStrokes",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 866848198856077
+		},
+		{
+			"eventType": "variable",
+			"name": "lastLayout",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 395219259566964
+		},
+		{
+			"eventType": "variable",
+			"name": "currentPar",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 645017871113308
+		},
+		{
+			"eventType": "variable",
+			"name": "currentHoleCompleted",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 398624272803691
+		},
+		{
+			"eventType": "variable",
+			"name": "currentHole",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 492543914178338
+		},
+		{
+			"eventType": "variable",
+			"name": "totalStars",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 407186687522188
+		},
+		{
 			"eventType": "include",
 			"includeSheet": "eFlag"
 		},
@@ -137,16 +197,38 @@
 			],
 			"actions": [
 				{
-					"id": "set-instvar-value",
-					"objectClass": "variables",
-					"sid": 127417536106979,
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 819180621715963,
 					"parameters": {
-						"instance-variable": "levelStrokes",
+						"variable": "currentStrokes",
 						"value": "0"
 					}
 				}
 			],
 			"sid": 839009149152761
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 149808741274811
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 426618772421722,
+					"parameters": {
+						"variable": "lastLayout",
+						"value": "\"game\""
+					}
+				}
+			],
+			"sid": 930101512385180
 		}
 	],
 	"sid": 977528092617044

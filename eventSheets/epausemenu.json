@@ -407,6 +407,15 @@
 								"volume": "0",
 								"tag-optional": "\"\""
 							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 225117396318211,
+							"parameters": {
+								"variable": "currentStrokes",
+								"value": "0"
+							}
 						}
 					],
 					"sid": 900493221196960
@@ -457,6 +466,15 @@
 							"sid": 842889442986124,
 							"parameters": {
 								"time-scale": "1.0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 868428996989899,
+							"parameters": {
+								"variable": "currentStrokes",
+								"value": "0"
 							}
 						},
 						{

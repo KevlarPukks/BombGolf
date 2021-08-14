@@ -421,9 +421,9 @@
 						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
-							"sid": 559776456387332,
+							"sid": 103857666099581,
 							"parameters": {
-								"variable": "totalHits",
+								"variable": "currentStrokes",
 								"value": "1"
 							}
 						},
@@ -454,35 +454,8 @@
 							}
 						},
 						{
-							"id": "add-to-instvar",
-							"objectClass": "variables",
-							"sid": 712234291098916,
-							"parameters": {
-								"instance-variable": "gameStrokes",
-								"value": "1"
-							}
-						},
-						{
-							"id": "add-to-instvar",
-							"objectClass": "variables",
-							"sid": 571890611477399,
-							"parameters": {
-								"instance-variable": "levelStrokes",
-								"value": "1"
-							}
-						},
-						{
 							"callFunction": "SetStrokesText",
 							"sid": 609176260340455
-						},
-						{
-							"id": "set-text",
-							"objectClass": "LevelStrokes",
-							"sid": 984046674841894,
-							"disabled": true,
-							"parameters": {
-								"text": "\"Level\"&newline&\"Strokes\"&newline&variables.levelStrokes"
-							}
 						},
 						{
 							"id": "set-text",
@@ -1264,6 +1237,10 @@
 				}
 			],
 			"sid": 159866914859781
+		},
+		{
+			"eventType": "script",
+			"script": ""
 		}
 	],
 	"sid": 924502142333177
